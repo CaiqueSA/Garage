@@ -10,39 +10,56 @@
     android:orientation="horizontal">
 
     <Button
-        android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="60dp"
         android:paddingBottom="40dp"
-        android:text="Créditos"
-        android:id="@+id/botaoCreditos"/>
+        android:background="@drawable/botão_trofeu"
+        android:id="@+id/botaoTrofeu"
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="98dp"
+        android:layout_marginEnd="98dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
-        android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="60dp"
         android:paddingBottom="40dp"
-        android:text="Jogar"
-        android:id="@+id/botaoJogar"/>
+        android:background="@drawable/botão_menu"
+        android:id="@+id/botaoMenu"
+        android:layout_alignTop="@+id/botaoJogar"
+        android:layout_toLeftOf="@+id/botaoJogar"
+        android:layout_toStartOf="@+id/botaoJogar"
+        android:layout_marginRight="18dp"
+        android:layout_marginEnd="18dp" />
 
     <Button
-        android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="60dp"
         android:paddingBottom="40dp"
-        android:text="Loja"
-        android:id="@+id/botaoLoja"/>
+        android:background="@drawable/botão_jogar"
+        android:id="@+id/botaoJogar"
+        android:layout_alignTop="@+id/botaoLoja"
+        android:layout_toLeftOf="@+id/botaoLoja"
+        android:layout_toStartOf="@+id/botaoLoja"
+        android:layout_marginRight="18dp"
+        android:layout_marginEnd="18dp" />
 
     <Button
-        android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="60dp"
         android:paddingBottom="40dp"
-        android:text="Troféus"
-        android:id="@+id/botaoTrofeu"/>
+        android:background="@drawable/botão_loja"
+        android:id="@+id/botaoLoja"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_alignTop="@+id/botaoTrofeu"
+        android:layout_toLeftOf="@+id/botaoTrofeu"
+        android:layout_toStartOf="@+id/botaoTrofeu" />
 
 </RelativeLayout>
