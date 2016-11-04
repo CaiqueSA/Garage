@@ -1,9 +1,10 @@
-package br.com.unip.garage;
+package br.com.unip.garage.activity;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
+
+import br.com.unip.garage.R;
 
 public class MainActivity extends Activity {
 
