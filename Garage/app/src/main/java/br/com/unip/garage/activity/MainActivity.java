@@ -26,5 +26,14 @@ public class MainActivity extends Activity {
                 startActivity(startCreditos);
             }
         });
+
+        Button botaoLoja = (Button) findViewById(R.id.botaoLoja);
+        botaoLoja.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startCreditos = new Intent(MainActivity.this, LojaActivity.class);
+                startActivity(startCreditos);
+            }
+        });
     }
 }
