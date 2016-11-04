@@ -3,17 +3,13 @@ package br.com.unip.garage.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
 import br.com.unip.garage.R;
 
-public class MenuActivity extends Activity {
+public class CreditosActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +22,7 @@ public class MenuActivity extends Activity {
         botaoVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startHome = new Intent(MenuActivity.this, MainActivity.class);
+                Intent startHome = new Intent(CreditosActivity.this, MainActivity.class);
                 startActivity(startHome);
             }
         });

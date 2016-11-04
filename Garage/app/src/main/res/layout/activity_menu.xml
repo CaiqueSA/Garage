@@ -4,7 +4,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.unip.garage.activity.MenuActivity"
+    tools:context="br.com.unip.garage.activity.CreditosActivity"
     android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
     android:background="@drawable/background_creditos"
     android:orientation="horizontal">

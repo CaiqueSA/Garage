@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
         botaoCreditos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startCreditos = new Intent(MainActivity.this, MenuActivity.class);
+                Intent startCreditos = new Intent(MainActivity.this, CreditosActivity.class);
                 startActivity(startCreditos);
             }
         });
