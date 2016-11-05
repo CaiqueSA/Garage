@@ -4,37 +4,88 @@
     android:id="@+id/activity_loja"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.unip.garage.activity.LojaActivity"
     android:background="@drawable/background_loja"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    tools:context="br.com.unip.garage.activity.LojaActivity">
 
     <ImageButton
+        android:id="@+id/botaoVoltarLoja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/botao_voltar"
-        android:id="@+id/botaoVoltarLoja"
-        android:clickable="true"
-        android:layout_marginRight="43dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginBottom="28dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:background="@drawable/botao_voltar"
+        android:clickable="true"
         android:contentDescription="@string/botao_voltar" />
 
     <ImageButton
+        android:id="@+id/botaoPneuLoja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/botao_pneu"
-        android:id="@+id/botaoPneuLoja"
-        android:clickable="true"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="25dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="64dp"
-        android:contentDescription="@string/botao_pneu"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/botao_pneu"
+        android:clickable="true"
+        android:contentDescription="@string/botao_pneu" />
 
+    <ImageButton
+        android:id="@+id/botaoTurboLoja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/botaoFreioLoja"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
+        android:layout_toEndOf="@+id/botaoPneuLoja"
+        android:layout_toRightOf="@+id/botaoPneuLoja"
+        android:background="@drawable/botao_turbo"
+        android:clickable="true"
+        android:contentDescription="@string/botao_turbo" />
+
+    <ImageButton
+        android:id="@+id/botaoMotorLoja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/botaoPistaoLoja"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
+        android:layout_toEndOf="@+id/botaoFreioLoja"
+        android:layout_toRightOf="@+id/botaoFreioLoja"
+        android:background="@drawable/botao_motor"
+        android:clickable="true"
+        android:contentDescription="@string/botao_motor" />
+
+    <ImageButton
+        android:id="@+id/botaoFreioLoja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/botaoPneuLoja"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
+        android:layout_toEndOf="@+id/botaoTurboLoja"
+        android:layout_toRightOf="@+id/botaoTurboLoja"
+        android:background="@drawable/botao_freio"
+        android:clickable="true"
+        android:contentDescription="@string/botao_freio" />
+
+    <ImageButton
+        android:id="@+id/botaoPistaoLoja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:background="@drawable/botao_pistao"
+        android:clickable="true"
+        android:contentDescription="@string/botao_pistao"
+        android:layout_alignBottom="@+id/botaoFreioLoja"
+        android:layout_alignRight="@+id/botaoVoltarLoja"
+        android:layout_alignEnd="@+id/botaoVoltarLoja" />
 
 </RelativeLayout>
