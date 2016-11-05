@@ -6,21 +6,21 @@ package br.com.unip.garage.modelo;
 
 public class PecaLoja {
 
-    private final int idBackground;
-    private final int idImagem;
+    private final Integer idBackground;
+    private final Integer idImagem;
     private final Boolean clicavel;
 
-    public PecaLoja(int idBackground, int idImagem, Boolean clicavel) {
+    public PecaLoja(Integer idBackground, Integer idImagem, Boolean clicavel) {
         this.idBackground = idBackground;
         this.idImagem = idImagem;
         this.clicavel = clicavel;
     }
 
-    public int getIdBackground() {
+    public Integer getIdBackground() {
         return idBackground;
     }
 
-    public int getIdImagem() {
+    public Integer getIdImagem() {
         return idImagem;
     }
 

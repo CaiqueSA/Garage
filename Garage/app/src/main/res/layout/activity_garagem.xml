@@ -4,51 +4,380 @@
     android:id="@+id/activity_garagem"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.unip.garage.activity.GaragemActivity"
     android:background="@drawable/background_garagem"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    tools:context="br.com.unip.garage.activity.GaragemActivity">
 
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/botao_home"
         android:id="@+id/botaoHome"
-        android:clickable="true"
-        android:onClick="onClick"
-        android:layout_marginTop="75dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:contentDescription="@string/botao_home"/>
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/botao_mapas"
-        android:id="@+id/botaoMapas"
-        android:clickable="true"
-        android:onClick="onClick"
-        android:layout_marginTop="20dp"
-        android:contentDescription="@string/botao_mapa"
-        android:layout_below="@+id/botaoHome"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/botao_home"
+        android:clickable="true"
+        android:contentDescription="@string/botao_home"
+        android:onClick="onClick" />
 
     <ImageButton
+        android:id="@+id/botaoMapas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/placa_select"
-        android:src="@drawable/pneu_placa"
-        android:id="@+id/botaoPneuGaragem"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/botaoHome"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botao_mapas"
         android:clickable="true"
-        android:onClick="onClick"
         android:contentDescription="@string/botao_mapa"
+        android:onClick="onClick" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="73dp"
-        android:layout_marginStart="73dp"
-        android:layout_marginBottom="27dp" />
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="115dp"
+        android:layout_marginStart="115dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/pneusPecas"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/fundoPecaPneu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|bottom"
+                android:src="@drawable/campo_select_pecas"
+                tools:ignore="ContentDescription" />
+            <ImageButton
+                android:id="@+id/botaoPneuBasic"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/pneu_basic"
+                android:clickable="true"
+                android:layout_marginBottom="40dp"
+                android:contentDescription="@string/botao_pneu"
+                android:layout_gravity="center|bottom"/>
+
+            <ImageButton
+                android:id="@+id/botaoPneuSilver"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/pneu_silver"
+                android:clickable="true"
+                android:layout_marginBottom="90dp"
+                android:contentDescription="@string/botao_pneu"
+                android:layout_gravity="center_horizontal|bottom"/>
+
+            <ImageButton
+                android:id="@+id/botaoPneuGold"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/pneu_gold"
+                android:clickable="true"
+                android:layout_marginBottom="140dp"
+                android:contentDescription="@string/botao_pneu"
+                android:layout_gravity="center|bottom"/>
+
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/botaoPneuGaragem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|bottom"
+            android:background="@drawable/placa_select"
+            android:clickable="true"
+            android:contentDescription="@string/botao_pneu"
+            android:onClick="onClick"
+            android:src="@drawable/pneu_placa" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="215dp"
+        android:layout_marginStart="215dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/pistoesPecas"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/fundoPecaPistao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|bottom"
+                android:src="@drawable/campo_select_pecas"
+                tools:ignore="ContentDescription" />
+            <ImageButton
+                android:id="@+id/botaoPistaoBasic"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/pistao_basic"
+                android:clickable="true"
+                android:layout_marginBottom="40dp"
+                android:contentDescription="@string/botao_pistao"
+                android:layout_gravity="center|bottom"/>
+
+            <ImageButton
+                android:id="@+id/botaoPistaoSilver"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/pistao_silver"
+                android:clickable="true"
+                android:layout_marginBottom="90dp"
+                android:contentDescription="@string/botao_pistao"
+                android:layout_gravity="center_horizontal|bottom"/>
+
+            <ImageButton
+                android:id="@+id/botaoPistaoGold"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/pistao_gold"
+                android:clickable="true"
+                android:layout_marginBottom="140dp"
+                android:contentDescription="@string/botao_pistao"
+                android:layout_gravity="center|bottom"/>
+
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/botaoPistaoGaragem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|bottom"
+            android:background="@drawable/placa_select"
+            android:clickable="true"
+            android:contentDescription="@string/botao_pistao"
+            android:onClick="onClick"
+            android:src="@drawable/pistao_placa" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="315dp"
+        android:layout_marginStart="315dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/motoresPecas"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/fundoPecaMotor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|bottom"
+                android:src="@drawable/campo_select_pecas"
+                tools:ignore="ContentDescription" />
+            <ImageButton
+                android:id="@+id/botaoMotorBasic"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/motor_basic"
+                android:clickable="true"
+                android:layout_marginBottom="40dp"
+                android:contentDescription="@string/botao_motor"
+                android:layout_gravity="center|bottom"/>
+
+            <ImageButton
+                android:id="@+id/botaoMotorSilver"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/motor_silver"
+                android:clickable="true"
+                android:layout_marginBottom="90dp"
+                android:contentDescription="@string/botao_motor"
+                android:layout_gravity="center_horizontal|bottom"/>
+
+            <ImageButton
+                android:id="@+id/botaoMotorGold"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/motor_gold"
+                android:clickable="true"
+                android:layout_marginBottom="140dp"
+                android:contentDescription="@string/botao_motor"
+                android:layout_gravity="center|bottom"/>
+
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/botaoMotorGaragem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|bottom"
+            android:background="@drawable/placa_select"
+            android:clickable="true"
+            android:contentDescription="@string/botao_motor"
+            android:onClick="onClick"
+            android:src="@drawable/motor_placa" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="415dp"
+        android:layout_marginStart="415dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/turbosPecas"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/fundoPecaTurbo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|bottom"
+                android:src="@drawable/campo_select_pecas"
+                tools:ignore="ContentDescription" />
+            <ImageButton
+                android:id="@+id/botaoTurboBasic"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/turbo_basic"
+                android:clickable="true"
+                android:layout_marginBottom="40dp"
+                android:contentDescription="@string/botao_turbo"
+                android:layout_gravity="center|bottom"/>
+
+            <ImageButton
+                android:id="@+id/botaoTurboSilver"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/turbo_silver"
+                android:clickable="true"
+                android:layout_marginBottom="90dp"
+                android:contentDescription="@string/botao_turbo"
+                android:layout_gravity="center_horizontal|bottom"/>
+
+            <ImageButton
+                android:id="@+id/botaoTurboGold"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/turbo_gold"
+                android:clickable="true"
+                android:layout_marginBottom="140dp"
+                android:contentDescription="@string/botao_turbo"
+                android:layout_gravity="center|bottom"/>
+
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/botaoTurboGaragem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|bottom"
+            android:background="@drawable/placa_select"
+            android:clickable="true"
+            android:contentDescription="@string/botao_turbo"
+            android:onClick="onClick"
+            android:src="@drawable/turbo_placa" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="515dp"
+        android:layout_marginStart="515dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/freiosPecas"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/fundoPecaFreio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|bottom"
+                android:src="@drawable/campo_select_pecas"
+                tools:ignore="ContentDescription" />
+            <ImageButton
+                android:id="@+id/botaoFreioBasic"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/freio_basic"
+                android:clickable="true"
+                android:layout_marginBottom="40dp"
+                android:contentDescription="@string/botao_freio"
+                android:layout_gravity="center|bottom"/>
+
+            <ImageButton
+                android:id="@+id/botaoFreioSilver"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/freio_silver"
+                android:clickable="true"
+                android:layout_marginBottom="90dp"
+                android:contentDescription="@string/botao_freio"
+                android:layout_gravity="center_horizontal|bottom"/>
+
+            <ImageButton
+                android:id="@+id/botaoFreioGold"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/freio_gold"
+                android:clickable="true"
+                android:layout_marginBottom="140dp"
+                android:contentDescription="@string/botao_freio"
+                android:layout_gravity="center|bottom"/>
+
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/botaoFreioGaragem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|bottom"
+            android:background="@drawable/placa_select"
+            android:clickable="true"
+            android:contentDescription="@string/botao_freio"
+            android:onClick="onClick"
+            android:src="@drawable/freio_placa" />
+
+    </FrameLayout>
 
 </RelativeLayout>
