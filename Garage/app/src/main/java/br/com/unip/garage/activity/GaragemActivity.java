@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 
 import br.com.unip.garage.R;
 
-public class CreditosActivity extends Activity {
+public class GaragemActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,13 +19,13 @@ public class CreditosActivity extends Activity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_creditos);
+        setContentView(R.layout.activity_garagem);
 
-        ImageButton botaoVoltar = (ImageButton)findViewById(R.id.botaoVoltarCreditos);
-        botaoVoltar.setOnClickListener(new View.OnClickListener() {
+        ImageButton botaoHome = (ImageButton)findViewById(R.id.botaoHome);
+        botaoHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startHome = new Intent(CreditosActivity.this, MainActivity.class);
+                Intent startHome = new Intent(GaragemActivity.this, MainActivity.class);
                 startActivity(startHome);
             }
         });

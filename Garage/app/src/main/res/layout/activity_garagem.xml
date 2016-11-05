@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_creditos"
+    android:id="@+id/activity_garagem"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.unip.garage.activity.CreditosActivity"
-    android:background="@drawable/background_creditos"
+    tools:context="br.com.unip.garage.activity.GaragemActivity"
+    android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+    android:background="@drawable/background_garagem"
     android:orientation="horizontal">
 
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/botao_voltar"
-        android:id="@+id/botaoVoltarCreditos"
+        android:background="@drawable/botao_home"
+        android:id="@+id/botaoHome"
         android:clickable="true"
-        android:layout_marginRight="43dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginBottom="28dp"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="75dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
