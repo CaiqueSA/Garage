@@ -88,4 +88,37 @@
         android:layout_alignRight="@+id/botaoVoltarLoja"
         android:layout_alignEnd="@+id/botaoVoltarLoja" />
 
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pecaAmadora"
+        android:background="@drawable/campo_loja"
+        android:src="@drawable/freio_basic"
+        android:contentDescription="@string/peca_amadora"
+        android:layout_alignTop="@+id/pecaIntermediaria"
+        android:layout_alignLeft="@+id/botaoPneuLoja"
+        android:layout_alignStart="@+id/botaoPneuLoja" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pecaProfissional"
+        android:background="@drawable/campo_loja"
+        android:contentDescription="@string/peca_profissional"
+        android:layout_marginTop="46dp"
+        android:layout_below="@+id/botaoMotorLoja"
+        android:layout_alignRight="@+id/botaoPistaoLoja"
+        android:layout_alignEnd="@+id/botaoPistaoLoja" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pecaIntermediaria"
+        android:background="@drawable/campo_loja"
+        android:contentDescription="@string/peca_itermediaria"
+        android:layout_alignTop="@+id/pecaProfissional"
+        android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>
