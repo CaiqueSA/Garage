@@ -27,6 +27,7 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 Intent startCreditos = new Intent(MainActivity.this, CreditosActivity.class);
                 startActivity(startCreditos);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -36,6 +37,7 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 Intent startLoja = new Intent(MainActivity.this, LojaActivity.class);
                 startActivity(startLoja);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -45,6 +47,7 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 Intent startJogar = new Intent(MainActivity.this, GaragemActivity.class);
                 startActivity(startJogar);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
     }

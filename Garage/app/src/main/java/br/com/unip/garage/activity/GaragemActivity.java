@@ -21,12 +21,13 @@ public class GaragemActivity extends Activity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_garagem);
 
-        ImageButton botaoHome = (ImageButton)findViewById(R.id.botaoHome);
+        ImageButton botaoHome = (ImageButton) findViewById(R.id.botaoHome);
         botaoHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent startHome = new Intent(GaragemActivity.this, MainActivity.class);
                 startActivity(startHome);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
     }

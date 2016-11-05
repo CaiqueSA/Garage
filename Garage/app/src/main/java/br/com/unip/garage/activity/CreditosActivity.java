@@ -27,6 +27,7 @@ public class CreditosActivity extends Activity {
             public void onClick(View view) {
                 Intent startHome = new Intent(CreditosActivity.this, MainActivity.class);
                 startActivity(startHome);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
     }

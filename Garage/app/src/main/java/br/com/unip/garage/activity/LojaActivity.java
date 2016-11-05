@@ -27,6 +27,7 @@ public class LojaActivity extends Activity {
             public void onClick(View view) {
                 Intent startCreditos = new Intent(LojaActivity.this, MainActivity.class);
                 startActivity(startCreditos);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
     }
