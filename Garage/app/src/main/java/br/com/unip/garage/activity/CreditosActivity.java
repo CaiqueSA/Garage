@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 
 import br.com.unip.garage.R;
 
-public class CreditosActivity extends Activity {
+public class CreditosActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,15 +20,14 @@ public class CreditosActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_creditos);
+    }
 
-        ImageButton botaoVoltar = (ImageButton)findViewById(R.id.botaoVoltarCreditos);
-        botaoVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startHome = new Intent(CreditosActivity.this, MainActivity.class);
-                startActivity(startHome);
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-            }
-        });
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.botaoVoltarCreditos) {
+            Intent startHome = new Intent(CreditosActivity.this, MainActivity.class);
+            startActivity(startHome);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        }
     }
 }

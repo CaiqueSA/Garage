@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 
 import br.com.unip.garage.R;
 
-public class GaragemActivity extends Activity {
+public class GaragemActivity extends Activity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,15 +20,15 @@ public class GaragemActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_garagem);
+    }
 
-        ImageButton botaoHome = (ImageButton) findViewById(R.id.botaoHome);
-        botaoHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startHome = new Intent(GaragemActivity.this, MainActivity.class);
-                startActivity(startHome);
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-            }
-        });
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.botaoHome) {
+            Intent startHome = new Intent(GaragemActivity.this, MainActivity.class);
+            startActivity(startHome);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        }
+
     }
 }

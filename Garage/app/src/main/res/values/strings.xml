@@ -9,7 +9,7 @@
     <string name="botao_loja">Botão loja</string>
     <string name="botao_trofeus">Botão trofeus</string>
 
-    <!-- loja -->
+    <!-- loja & garagem -->
     <string name="botao_freio">Botão freio</string>
     <string name="botao_turbo">Botão turbo</string>
     <string name="botao_motor">Botão motor</string>
@@ -22,6 +22,7 @@
 
     <!-- garagem -->
     <string name="botao_home">Botão home</string>
+    <string name="botao_mapa">Botão mapa</string>
 
     <!-- Geral -->
     <string name="botao_voltar">Botão voltar</string>

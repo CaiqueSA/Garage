@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="br.com.unip.garage.activity.MainActivity"
-    android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
     android:background="@drawable/background_home"
     android:orientation="horizontal">
 
@@ -17,6 +16,7 @@
         android:background="@drawable/botao_menu"
         android:id="@+id/botaoMenu"
         android:clickable="true"
+        android:onClick="onClick"
         android:layout_marginEnd="30dp"
         android:layout_alignTop="@+id/botaoJogar"
         android:layout_toLeftOf="@+id/botaoJogar"
@@ -30,6 +30,7 @@
         android:background="@drawable/botao_jogar"
         android:id="@+id/botaoJogar"
         android:clickable="true"
+        android:onClick="onClick"
         android:layout_marginEnd="30dp"
         android:layout_alignTop="@+id/botaoLoja"
         android:layout_toLeftOf="@+id/botaoLoja"
@@ -43,6 +44,7 @@
         android:background="@drawable/botao_loja"
         android:id="@+id/botaoLoja"
         android:clickable="true"
+        android:onClick="onClick"
         android:layout_marginEnd="30dp"
         android:layout_toStartOf="@+id/botaoTrofeu"
         android:layout_alignTop="@+id/botaoTrofeu"

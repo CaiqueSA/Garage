@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 
 import br.com.unip.garage.R;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,35 +20,22 @@ public class MainActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+    }
 
-        ImageButton botaoCreditos = (ImageButton) findViewById(R.id.botaoMenu);
-        botaoCreditos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startCreditos = new Intent(MainActivity.this, CreditosActivity.class);
-                startActivity(startCreditos);
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-            }
-        });
-
-        ImageButton botaoLoja = (ImageButton) findViewById(R.id.botaoLoja);
-        botaoLoja.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startLoja = new Intent(MainActivity.this, LojaActivity.class);
-                startActivity(startLoja);
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-            }
-        });
-
-        ImageButton botaoJogar = (ImageButton) findViewById(R.id.botaoJogar);
-        botaoJogar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startJogar = new Intent(MainActivity.this, GaragemActivity.class);
-                startActivity(startJogar);
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-            }
-        });
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.botaoMenu) {
+            Intent startCreditos = new Intent(MainActivity.this, CreditosActivity.class);
+            startActivity(startCreditos);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        } else if (v.getId() == R.id.botaoJogar) {
+            Intent startJogar = new Intent(MainActivity.this, GaragemActivity.class);
+            startActivity(startJogar);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        } else if (v.getId() == R.id.botaoLoja) {
+            Intent startLoja = new Intent(MainActivity.this, LojaActivity.class);
+            startActivity(startLoja);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        }
     }
 }

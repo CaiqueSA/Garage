@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="br.com.unip.garage.activity.GaragemActivity"
-    android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
     android:background="@drawable/background_garagem"
     android:orientation="horizontal">
 
@@ -16,11 +15,40 @@
         android:background="@drawable/botao_home"
         android:id="@+id/botaoHome"
         android:clickable="true"
+        android:onClick="onClick"
         android:layout_marginTop="75dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:contentDescription="@string/botao_home"/>
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botao_mapas"
+        android:id="@+id/botaoMapas"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/botao_mapa"
+        android:layout_below="@+id/botaoHome"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/placa_select"
+        android:src="@drawable/pneu_placa"
+        android:id="@+id/botaoPneuGaragem"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:contentDescription="@string/botao_mapa"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="73dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginBottom="27dp" />
 
 </RelativeLayout>

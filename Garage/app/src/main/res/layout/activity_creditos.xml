@@ -15,6 +15,7 @@
         android:background="@drawable/botao_voltar"
         android:id="@+id/botaoVoltarCreditos"
         android:clickable="true"
+        android:onClick="onClick"
         android:layout_marginRight="43dp"
         android:layout_marginEnd="43dp"
         android:layout_marginBottom="28dp"
