@@ -1,7 +1,5 @@
 package br.com.unip.garage.controller;
 
-import android.content.res.Resources;
-
 import br.com.unip.garage.R;
 import br.com.unip.garage.enumeration.TipoPeca;
 import br.com.unip.garage.modelo.PecaLoja;
@@ -15,45 +13,45 @@ public class LojaController {
 
     public PecaLoja getPecaAmadora(TipoPeca peca) {
         if (peca.equals(TipoPeca.PNEU)) {
-            return new PecaLoja(R.drawable.campo_loja, R.drawable.pneu_basic);
+            return new PecaLoja(R.drawable.campo_loja, R.drawable.pneu_basic, true);
         } else if (peca.equals(TipoPeca.TURBO)) {
-            return new PecaLoja(R.drawable.campo_loja, R.drawable.turbo_basic);
+            return new PecaLoja(R.drawable.campo_loja, R.drawable.turbo_basic, true);
         } else if (peca.equals(TipoPeca.MOTOR)) {
-            return new PecaLoja(R.drawable.campo_loja, R.drawable.motor_basic);
+            return new PecaLoja(R.drawable.campo_loja, R.drawable.motor_basic, true);
         } else if (peca.equals(TipoPeca.FREIO)) {
-            return new PecaLoja(R.drawable.campo_loja, R.drawable.freio_basic);
+            return new PecaLoja(R.drawable.campo_loja, R.drawable.freio_basic, true);
         }  else if (peca.equals(TipoPeca.PISTAO)) {
-            return new PecaLoja(R.drawable.campo_loja, R.drawable.pistao_basic);
+            return new PecaLoja(R.drawable.campo_loja, R.drawable.pistao_basic, true);
         }
         return null;
     }
 
     public PecaLoja getPecaIntermediaria(TipoPeca peca) {
         if (peca.equals(TipoPeca.PNEU)) {
-            return new PecaLoja(R.drawable.campo_loja, R.drawable.pneu_silver);
+            return new PecaLoja(R.drawable.campo_loja, R.drawable.pneu_silver, true);
         } else if (peca.equals(TipoPeca.TURBO)) {
-            return new PecaLoja(R.drawable.campo_loja, R.drawable.turbo_silver);
+            return new PecaLoja(R.drawable.campo_loja, R.drawable.turbo_silver, true);
         } else if (peca.equals(TipoPeca.MOTOR)) {
-            return new PecaLoja(R.drawable.campo_loja, R.drawable.motor_silver);
+            return new PecaLoja(R.drawable.campo_loja, R.drawable.motor_silver, true);
         } else if (peca.equals(TipoPeca.FREIO)) {
-            return new PecaLoja(R.drawable.campo_loja, R.drawable.freio_silver);
+            return new PecaLoja(R.drawable.campo_loja, R.drawable.freio_silver, true);
         }  else if (peca.equals(TipoPeca.PISTAO)) {
-            return new PecaLoja(R.drawable.campo_loja, R.drawable.pistao_silver);
+            return new PecaLoja(R.drawable.campo_loja, R.drawable.pistao_silver, true);
         }
         return null;
     }
 
     public PecaLoja getPecaProfissional(TipoPeca peca) {
         if (peca.equals(TipoPeca.PNEU)) {
-            return new PecaLoja(R.drawable.campo_loja, R.drawable.pneu_gold);
+            return new PecaLoja(R.drawable.campo_loja, R.drawable.pneu_gold, true);
         } else if (peca.equals(TipoPeca.TURBO)) {
-            return new PecaLoja(R.drawable.campo_loja, R.drawable.turbo_gold);
+            return new PecaLoja(R.drawable.campo_loja, R.drawable.turbo_gold, true);
         } else if (peca.equals(TipoPeca.MOTOR)) {
-            return new PecaLoja(R.drawable.campo_loja, R.drawable.motor_gold);
+            return new PecaLoja(R.drawable.campo_loja, R.drawable.motor_gold, true);
         } else if (peca.equals(TipoPeca.FREIO)) {
-            return new PecaLoja(R.drawable.campo_loja, R.drawable.freio_gold);
+            return new PecaLoja(R.drawable.campo_loja, R.drawable.freio_gold, true);
         }  else if (peca.equals(TipoPeca.PISTAO)) {
-            return new PecaLoja(R.drawable.campo_loja, R.drawable.pistao_gold);
+            return new PecaLoja(R.drawable.campo_loja, R.drawable.pistao_gold, true);
         }
         return null;
     }

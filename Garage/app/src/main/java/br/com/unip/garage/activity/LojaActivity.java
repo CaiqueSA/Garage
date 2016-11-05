@@ -98,16 +98,20 @@ public class LojaActivity extends Activity {
         botaoPecaAmadora.setBackgroundResource(pecaAmadora.getIdBackground());
         botaoPecaAmadora.setImageResource(pecaAmadora.getIdImagem());
         botaoPecaAmadora.setVisibility(View.VISIBLE);
+        botaoPecaAmadora.setClickable(pecaAmadora.getClicavel());
+
 
         ImageButton botaoPecaIntermediaria = (ImageButton)findViewById(R.id.pecaIntermediaria);
         botaoPecaIntermediaria.setBackgroundResource(pecaIntermediaria.getIdBackground());
         botaoPecaIntermediaria.setImageResource(pecaIntermediaria.getIdImagem());
         botaoPecaIntermediaria.setVisibility(View.VISIBLE);
+        botaoPecaIntermediaria.setClickable(pecaIntermediaria.getClicavel());
 
         ImageButton botaoPecaProfissional = (ImageButton)findViewById(R.id.pecaProfissional);
         botaoPecaProfissional.setBackgroundResource(pecaProfissional.getIdBackground());
         botaoPecaProfissional.setImageResource(pecaProfissional.getIdImagem());
         botaoPecaProfissional.setVisibility(View.VISIBLE);
+        botaoPecaProfissional.setClickable(pecaProfissional.getClicavel());
     }
 
     private void removerSelecaoBotoes(){
