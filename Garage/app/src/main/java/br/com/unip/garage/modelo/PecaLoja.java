@@ -6,19 +6,19 @@ package br.com.unip.garage.modelo;
 
 public class PecaLoja {
 
-    private final String background;
-    private final String imagem;
+    private final int idBackground;
+    private final int idImagem;
 
-    public PecaLoja(String background, String imagem) {
-        this.background = background;
-        this.imagem = imagem;
+    public PecaLoja(int idBackground, int idImagem) {
+        this.idBackground = idBackground;
+        this.idImagem = idImagem;
     }
 
-    public String getBackground() {
-        return background;
+    public int getIdBackground() {
+        return idBackground;
     }
 
-    public String getImagem() {
-        return imagem;
+    public int getIdImagem() {
+        return idImagem;
     }
 }
