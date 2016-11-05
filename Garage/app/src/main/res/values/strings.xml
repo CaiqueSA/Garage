@@ -3,16 +3,26 @@
     <string name="title_activity_menu">MenuActivity</string>
 
     <!-- Strings de Acessibilidade -->
-    <string name="botao_freio">Botão freio</string>
-    <string name="botao_turbo">Botão turbo</string>
-    <string name="botao_motor">Botão motor</string>
-    <string name="botao_pneu">Botão pneu</string>
-    <string name="botao_pistão">Botão pistão</string>
-    <string name="botao_voltar">Botão voltar</string>
+    <!-- home -->
     <string name="botao_creditos">Botão creditos</string>
     <string name="botao_jogar">Botão jogar</string>
     <string name="botao_loja">Botão loja</string>
     <string name="botao_trofeus">Botão trofeus</string>
+
+    <!-- loja -->
+    <string name="botao_freio">Botão freio</string>
+    <string name="botao_turbo">Botão turbo</string>
+    <string name="botao_motor">Botão motor</string>
+    <string name="botao_pneu">Botão pneu</string>
     <string name="botao_pistao">Botão pistão</string>
+    <string name="peca_amadora">Peça nível amador</string>
+    <string name="peca_itermediaria">Peça nível intermediario</string>
+    <string name="peca_profissional">Peça nível profissional</string>
+
+
+    <!-- garagem -->
     <string name="botao_home">Botão home</string>
+
+    <!-- Geral -->
+    <string name="botao_voltar">Botão voltar</string>
 </resources>
