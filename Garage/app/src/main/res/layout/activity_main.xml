@@ -17,10 +17,12 @@
         android:background="@drawable/botao_menu"
         android:id="@+id/botaoMenu"
         android:clickable="true"
-        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
         android:layout_alignTop="@+id/botaoJogar"
         android:layout_toLeftOf="@+id/botaoJogar"
-        android:layout_toStartOf="@+id/botaoJogar" />
+        android:layout_toStartOf="@+id/botaoJogar"
+        android:contentDescription="@string/botao_creditos"
+        android:layout_marginRight="30dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -28,10 +30,12 @@
         android:background="@drawable/botao_jogar"
         android:id="@+id/botaoJogar"
         android:clickable="true"
-        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
         android:layout_alignTop="@+id/botaoLoja"
         android:layout_toLeftOf="@+id/botaoLoja"
-        android:layout_toStartOf="@+id/botaoLoja" />
+        android:layout_toStartOf="@+id/botaoLoja"
+        android:contentDescription="@string/botao_jogar"
+        android:layout_marginRight="30dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -39,10 +43,13 @@
         android:background="@drawable/botao_loja"
         android:id="@+id/botaoLoja"
         android:clickable="true"
-        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_toStartOf="@+id/botaoTrofeu"
         android:layout_alignTop="@+id/botaoTrofeu"
         android:layout_toLeftOf="@+id/botaoTrofeu"
-        android:layout_alignBottom="@+id/botaoTrofeu" />
+        android:layout_alignBottom="@+id/botaoTrofeu"
+        android:contentDescription="@string/botao_loja"
+        android:layout_marginRight="30dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -50,10 +57,12 @@
         android:background="@drawable/botao_trofeu"
         android:id="@+id/botaoTrofeu"
         android:clickable="true"
-        android:layout_marginRight="130dp"
+        android:layout_marginEnd="130dp"
         android:layout_marginBottom="40dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/botao_trofeus"
+        android:layout_marginRight="130dp" />
 
 </RelativeLayout>
