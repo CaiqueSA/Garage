@@ -2,7 +2,7 @@ package br.com.unip.garage.controller;
 
 import br.com.unip.garage.R;
 import br.com.unip.garage.enumeration.TipoPeca;
-import br.com.unip.garage.modelo.PecaLoja;
+import br.com.unip.garage.model.PecaLoja;
 
 /**
  * Created by caique on 05/11/16.

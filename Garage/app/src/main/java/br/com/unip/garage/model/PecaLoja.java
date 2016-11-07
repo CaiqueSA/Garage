@@ -1,4 +1,4 @@
-package br.com.unip.garage.modelo;
+package br.com.unip.garage.model;
 
 /**
  * Created by caique on 05/11/16.

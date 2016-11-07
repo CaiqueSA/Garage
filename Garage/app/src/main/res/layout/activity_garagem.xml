@@ -35,6 +35,47 @@
         android:contentDescription="@string/botao_mapa"
         android:onClick="onClick" />
 
+    <ImageView
+        android:id="@+id/carro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/botaoMapas"
+        android:layout_marginEnd="90dp"
+        android:layout_marginRight="90dp"
+        android:layout_marginTop="30dp"
+        android:contentDescription="@string/carro_azul"
+        android:background="@drawable/carro_azul" />
+
+    <ImageButton
+        android:id="@+id/seta_direita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/seta_direita"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/botaoMapas"
+        android:onClick="onClick"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="70dp"
+        android:contentDescription="@string/seta_direita" />
+
+    <ImageButton
+        android:id="@+id/seta_esquerda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/seta_esquerda"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/botaoMapas"
+        android:onClick="onClick"
+        android:layout_marginEnd="260dp"
+        android:layout_marginRight="260dp"
+        android:layout_marginTop="70dp"
+        android:contentDescription="@string/seta_esquerda" />
+
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,10 +87,10 @@
         android:layout_marginStart="115dp">
 
         <FrameLayout
+            android:id="@+id/pneusPecas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:id="@+id/pneusPecas"
             android:visibility="gone">
 
             <ImageView
@@ -59,35 +100,36 @@
                 android:layout_gravity="center_vertical|bottom"
                 android:src="@drawable/campo_select_pecas"
                 tools:ignore="ContentDescription" />
+
             <ImageButton
                 android:id="@+id/botaoPneuBasic"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="40dp"
                 android:background="@drawable/pneu_basic"
                 android:clickable="true"
-                android:layout_marginBottom="40dp"
-                android:contentDescription="@string/botao_pneu"
-                android:layout_gravity="center|bottom"/>
+                android:contentDescription="@string/botao_pneu" />
 
             <ImageButton
                 android:id="@+id/botaoPneuSilver"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="90dp"
                 android:background="@drawable/pneu_silver"
                 android:clickable="true"
-                android:layout_marginBottom="90dp"
-                android:contentDescription="@string/botao_pneu"
-                android:layout_gravity="center_horizontal|bottom"/>
+                android:contentDescription="@string/botao_pneu" />
 
             <ImageButton
                 android:id="@+id/botaoPneuGold"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="140dp"
                 android:background="@drawable/pneu_gold"
                 android:clickable="true"
-                android:layout_marginBottom="140dp"
-                android:contentDescription="@string/botao_pneu"
-                android:layout_gravity="center|bottom"/>
+                android:contentDescription="@string/botao_pneu" />
 
         </FrameLayout>
 
@@ -115,10 +157,10 @@
         android:layout_marginStart="215dp">
 
         <FrameLayout
+            android:id="@+id/pistoesPecas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:id="@+id/pistoesPecas"
             android:visibility="gone">
 
             <ImageView
@@ -128,35 +170,36 @@
                 android:layout_gravity="center_vertical|bottom"
                 android:src="@drawable/campo_select_pecas"
                 tools:ignore="ContentDescription" />
+
             <ImageButton
                 android:id="@+id/botaoPistaoBasic"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="40dp"
                 android:background="@drawable/pistao_basic"
                 android:clickable="true"
-                android:layout_marginBottom="40dp"
-                android:contentDescription="@string/botao_pistao"
-                android:layout_gravity="center|bottom"/>
+                android:contentDescription="@string/botao_pistao" />
 
             <ImageButton
                 android:id="@+id/botaoPistaoSilver"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="90dp"
                 android:background="@drawable/pistao_silver"
                 android:clickable="true"
-                android:layout_marginBottom="90dp"
-                android:contentDescription="@string/botao_pistao"
-                android:layout_gravity="center_horizontal|bottom"/>
+                android:contentDescription="@string/botao_pistao" />
 
             <ImageButton
                 android:id="@+id/botaoPistaoGold"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="140dp"
                 android:background="@drawable/pistao_gold"
                 android:clickable="true"
-                android:layout_marginBottom="140dp"
-                android:contentDescription="@string/botao_pistao"
-                android:layout_gravity="center|bottom"/>
+                android:contentDescription="@string/botao_pistao" />
 
         </FrameLayout>
 
@@ -184,10 +227,10 @@
         android:layout_marginStart="315dp">
 
         <FrameLayout
+            android:id="@+id/motoresPecas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:id="@+id/motoresPecas"
             android:visibility="gone">
 
             <ImageView
@@ -197,35 +240,36 @@
                 android:layout_gravity="center_vertical|bottom"
                 android:src="@drawable/campo_select_pecas"
                 tools:ignore="ContentDescription" />
+
             <ImageButton
                 android:id="@+id/botaoMotorBasic"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="40dp"
                 android:background="@drawable/motor_basic"
                 android:clickable="true"
-                android:layout_marginBottom="40dp"
-                android:contentDescription="@string/botao_motor"
-                android:layout_gravity="center|bottom"/>
+                android:contentDescription="@string/botao_motor" />
 
             <ImageButton
                 android:id="@+id/botaoMotorSilver"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="90dp"
                 android:background="@drawable/motor_silver"
                 android:clickable="true"
-                android:layout_marginBottom="90dp"
-                android:contentDescription="@string/botao_motor"
-                android:layout_gravity="center_horizontal|bottom"/>
+                android:contentDescription="@string/botao_motor" />
 
             <ImageButton
                 android:id="@+id/botaoMotorGold"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="140dp"
                 android:background="@drawable/motor_gold"
                 android:clickable="true"
-                android:layout_marginBottom="140dp"
-                android:contentDescription="@string/botao_motor"
-                android:layout_gravity="center|bottom"/>
+                android:contentDescription="@string/botao_motor" />
 
         </FrameLayout>
 
@@ -253,10 +297,10 @@
         android:layout_marginStart="415dp">
 
         <FrameLayout
+            android:id="@+id/turbosPecas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:id="@+id/turbosPecas"
             android:visibility="gone">
 
             <ImageView
@@ -266,35 +310,36 @@
                 android:layout_gravity="center_vertical|bottom"
                 android:src="@drawable/campo_select_pecas"
                 tools:ignore="ContentDescription" />
+
             <ImageButton
                 android:id="@+id/botaoTurboBasic"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="40dp"
                 android:background="@drawable/turbo_basic"
                 android:clickable="true"
-                android:layout_marginBottom="40dp"
-                android:contentDescription="@string/botao_turbo"
-                android:layout_gravity="center|bottom"/>
+                android:contentDescription="@string/botao_turbo" />
 
             <ImageButton
                 android:id="@+id/botaoTurboSilver"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="90dp"
                 android:background="@drawable/turbo_silver"
                 android:clickable="true"
-                android:layout_marginBottom="90dp"
-                android:contentDescription="@string/botao_turbo"
-                android:layout_gravity="center_horizontal|bottom"/>
+                android:contentDescription="@string/botao_turbo" />
 
             <ImageButton
                 android:id="@+id/botaoTurboGold"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="140dp"
                 android:background="@drawable/turbo_gold"
                 android:clickable="true"
-                android:layout_marginBottom="140dp"
-                android:contentDescription="@string/botao_turbo"
-                android:layout_gravity="center|bottom"/>
+                android:contentDescription="@string/botao_turbo" />
 
         </FrameLayout>
 
@@ -322,10 +367,10 @@
         android:layout_marginStart="515dp">
 
         <FrameLayout
+            android:id="@+id/freiosPecas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:id="@+id/freiosPecas"
             android:visibility="gone">
 
             <ImageView
@@ -335,35 +380,36 @@
                 android:layout_gravity="center_vertical|bottom"
                 android:src="@drawable/campo_select_pecas"
                 tools:ignore="ContentDescription" />
+
             <ImageButton
                 android:id="@+id/botaoFreioBasic"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="40dp"
                 android:background="@drawable/freio_basic"
                 android:clickable="true"
-                android:layout_marginBottom="40dp"
-                android:contentDescription="@string/botao_freio"
-                android:layout_gravity="center|bottom"/>
+                android:contentDescription="@string/botao_freio" />
 
             <ImageButton
                 android:id="@+id/botaoFreioSilver"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="90dp"
                 android:background="@drawable/freio_silver"
                 android:clickable="true"
-                android:layout_marginBottom="90dp"
-                android:contentDescription="@string/botao_freio"
-                android:layout_gravity="center_horizontal|bottom"/>
+                android:contentDescription="@string/botao_freio" />
 
             <ImageButton
                 android:id="@+id/botaoFreioGold"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="140dp"
                 android:background="@drawable/freio_gold"
                 android:clickable="true"
-                android:layout_marginBottom="140dp"
-                android:contentDescription="@string/botao_freio"
-                android:layout_gravity="center|bottom"/>
+                android:contentDescription="@string/botao_freio" />
 
         </FrameLayout>
 

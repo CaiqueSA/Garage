@@ -23,6 +23,12 @@
     <!-- garagem -->
     <string name="botao_home">Botão home</string>
     <string name="botao_mapa">Botão mapa</string>
+    <string name="carro_azul">Carro azul</string>
+    <string name="carro_verde">Carro verde</string>
+    <string name="carro_amarelo">Carro amarelo</string>
+    <string name="carro_vermelho">Carro vermelho</string>
+    <string name="seta_direita">Seta para direita</string>
+    <string name="seta_esquerda">Seta para esquerda</string>
 
     <!-- Geral -->
     <string name="botao_voltar">Botão voltar</string>

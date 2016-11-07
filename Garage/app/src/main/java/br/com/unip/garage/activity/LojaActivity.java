@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 import br.com.unip.garage.R;
 import br.com.unip.garage.controller.LojaController;
 import br.com.unip.garage.enumeration.TipoPeca;
-import br.com.unip.garage.modelo.PecaLoja;
+import br.com.unip.garage.model.PecaLoja;
 
 public class LojaActivity extends Activity implements View.OnClickListener {
 
