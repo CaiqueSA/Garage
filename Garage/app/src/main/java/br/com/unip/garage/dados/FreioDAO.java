@@ -31,8 +31,8 @@ public class FreioDAO extends PecaDAO<Freio> {
             COLUNA_ESTABILIDADE + " integer not null " +
             ")";
 
-    public FreioDAO() {
-        super(TABELA, CREATE_TABLE);
+    public FreioDAO(Context context) {
+        super(TABELA, CREATE_TABLE, context);
         colunas.add(COLUNA_FRENAGEM);
         colunas.add(COLUNA_ESTABILIDADE);
     }

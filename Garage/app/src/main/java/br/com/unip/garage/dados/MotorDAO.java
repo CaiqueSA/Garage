@@ -31,8 +31,8 @@ public class MotorDAO extends PecaDAO<Motor> {
             COLUNA_VELOCIDADE + " INTEGER NOT NULL " +
             ")";
 
-    public MotorDAO() {
-        super(TABELA, CREATE_TABLE);
+    public MotorDAO(Context context) {
+        super(TABELA, CREATE_TABLE, context);
         colunas.add(COLUNA_ACELERACAO);
         colunas.add(COLUNA_VELOCIDADE);
     }

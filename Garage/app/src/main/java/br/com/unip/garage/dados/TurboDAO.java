@@ -1,6 +1,7 @@
 package br.com.unip.garage.dados;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
 
@@ -32,8 +33,8 @@ public class TurboDAO extends PecaDAO<Turbo> {
             COLUNA_TEMPO_TURBO + " INTEGER NOT NULL" +
             ")";
 
-    public TurboDAO() {
-        super(TABELA, CREATE_TABLE);
+    public TurboDAO(Context context) {
+        super(TABELA, CREATE_TABLE, context);
         colunas.add(COLUNA_VELOCIDADE);
         colunas.add(COLUNA_ESTABILIDADE);
         colunas.add(COLUNA_TEMPO_TURBO);

@@ -29,8 +29,8 @@ public class PistaoDAO extends PecaDAO<Pistao> {
             COLUNA_VELOCIDADE + " INTEGER NOT NULL  " +
             ")";
 
-    public PistaoDAO() {
-        super(TABELA, CREATE_TABLE);
+    public PistaoDAO(Context context) {
+        super(TABELA, CREATE_TABLE, context);
         colunas.add(COLUNA_VELOCIDADE);
     }
 

@@ -23,9 +23,10 @@ import br.com.unip.garage.model.Turbo;
 
 public class CarroDAO extends TemplateDAO<Carro> {
 
+    private Context context;
+
     //Nome da tabela
     public static final String TABELA = "CARRO";
-
     //Colunas da tabrla carro
     public static final String COLUNA_ICONE = "ICONE";
     public static final String COLUNA_CARRO_IMAGEM = "CARRO_IMAGEM";
@@ -35,8 +36,8 @@ public class CarroDAO extends TemplateDAO<Carro> {
     public static final String COLUNA_IDFREIO = "ID_FREIO";
     public static final String COLUNA_IDPISTAO = "ID_PISTAO";
     public static final String COLUNA_IDTURBO = "ID_TURBO";
-    public static final String COLUNA_IDPNEU = "ID_PNEU";
 
+    public static final String COLUNA_IDPNEU = "ID_PNEU";
     //SQL para criar a tabela
     private static final String CREATE_TABLE = "CREATE TABLE " +
             TABELA + " (" +
@@ -52,8 +53,9 @@ public class CarroDAO extends TemplateDAO<Carro> {
             COLUNA_IDPNEU + " INTEGER" +
             ")";
 
-    public CarroDAO() {
-        super(TABELA, CREATE_TABLE);
+    public CarroDAO(Context context) {
+        super(TABELA, CREATE_TABLE, context);
+        this.context = context;
         colunas.add(COLUNA_ICONE);
         colunas.add(COLUNA_CARRO_IMAGEM);
         colunas.add(COLUNA_VELOCIDADE);
@@ -151,7 +153,7 @@ public class CarroDAO extends TemplateDAO<Carro> {
     }
 
     private Pneu getPneuById(Cursor c) {
-        PneuDAO pneuDAO = new PneuDAO();
+        PneuDAO pneuDAO = new PneuDAO(context);
         Integer pneuId = c.getInt(c.getColumnIndex(COLUNA_IDPNEU));
         if(pneuId == 0){
             return null;
@@ -160,7 +162,7 @@ public class CarroDAO extends TemplateDAO<Carro> {
     }
 
     private Turbo getTurboById(Cursor c) {
-        TurboDAO turboDAO = new TurboDAO();
+        TurboDAO turboDAO = new TurboDAO(context);
         Integer turboId = c.getInt(c.getColumnIndex(COLUNA_IDTURBO));
         if(turboId == 0){
             return null;
@@ -169,7 +171,7 @@ public class CarroDAO extends TemplateDAO<Carro> {
     }
 
     private Freio getFreioById(Cursor c) {
-        FreioDAO freioDAO = new FreioDAO();
+        FreioDAO freioDAO = new FreioDAO(context);
         Integer freioId = c.getInt(c.getColumnIndex(COLUNA_IDFREIO));
         if(freioId == 0){
             return null;
@@ -178,7 +180,7 @@ public class CarroDAO extends TemplateDAO<Carro> {
     }
 
     private Motor getMotorById(Cursor c) {
-        MotorDAO motorDAO = new MotorDAO();
+        MotorDAO motorDAO = new MotorDAO(context);
         Integer motorId = c.getInt(c.getColumnIndex(COLUNA_IDMOTOR));
         if(motorId == 0){
             return null;
@@ -187,7 +189,7 @@ public class CarroDAO extends TemplateDAO<Carro> {
     }
 
     private Pistao getPistaoById(Cursor c) {
-        PistaoDAO pistaoDAO = new PistaoDAO();
+        PistaoDAO pistaoDAO = new PistaoDAO(context);
         Integer pistaoId = c.getInt(c.getColumnIndex(COLUNA_IDPISTAO));
         if(pistaoId == 0){
             return null;

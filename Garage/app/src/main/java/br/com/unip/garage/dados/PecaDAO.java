@@ -1,6 +1,7 @@
 package br.com.unip.garage.dados;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
 
@@ -20,8 +21,8 @@ public abstract class PecaDAO<P extends Peca> extends TemplateDAO<P> {
     public static final String COLUNA_NIVEL_DESBLOQUEIO = "NIVEL_DESBLOQUEIO";
     public static final String COLUNA_PRECO = "PRECO";
 
-    public PecaDAO(final String tabela, final String sqlCreateTable) {
-        super(tabela, sqlCreateTable);
+    public PecaDAO(final String tabela, final String sqlCreateTable, Context context) {
+        super(tabela, sqlCreateTable, context);
         colunas.add(COLUNA_IMAGEM);
         colunas.add(COLUNA_NIVEL_DESBLOQUEIO);
         colunas.add(COLUNA_PRECO);

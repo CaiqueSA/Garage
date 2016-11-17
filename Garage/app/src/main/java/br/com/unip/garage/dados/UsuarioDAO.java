@@ -33,8 +33,8 @@ public class UsuarioDAO extends TemplateDAO<Usuario> {
             COLUNA_IDCARRO + " INTEGER" +
             ")";
 
-    public UsuarioDAO() {
-        super(TABELA, CREATE_TABLE);
+    public UsuarioDAO(Context context) {
+        super(TABELA, CREATE_TABLE, context);
         colunas.add(COLUNA_DINHEIRO);
         colunas.add(COLUNA_NIVEL);
         colunas.add(COLUNA_IDCARRO);

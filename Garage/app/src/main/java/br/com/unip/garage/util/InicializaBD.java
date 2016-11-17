@@ -27,17 +27,17 @@ import br.com.unip.garage.model.Usuario;
 public class InicializaBD {
 
     public void inicializaBanco(Context context) {
-        inicializaFreio();
-        inicializaMotor();
-        inicializaPistao();
-        inicializaPneu();
-        inicializaTurbina();
-        inicializaCarros();
-        inicializaUsuario();
+        inicializaFreio(context);
+        inicializaMotor(context);
+        inicializaPistao(context);
+        inicializaPneu(context);
+        inicializaTurbina(context);
+        inicializaCarros(context);
+        inicializaUsuario(context);
     }
 
-    private void inicializaUsuario() {
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
+    private void inicializaUsuario(Context context) {
+        UsuarioDAO usuarioDAO = new UsuarioDAO(context);
         if (isListNull(usuarioDAO)) {
             Usuario usuario = new Usuario();
             usuario.setNivel(1);
@@ -46,8 +46,8 @@ public class InicializaBD {
         }
     }
 
-    private void inicializaCarros() {
-        CarroDAO carroDAO = new CarroDAO();
+    private void inicializaCarros(Context context) {
+        CarroDAO carroDAO = new CarroDAO(context);
         if (isListNull(carroDAO)) {
 
             Carro carro1 = new BuilderCarro().icone(String.valueOf(R.drawable.icone_vermelho))
@@ -81,8 +81,8 @@ public class InicializaBD {
         }
     }
 
-    private void inicializaFreio() {
-        FreioDAO freioDAO = new FreioDAO();
+    private void inicializaFreio(Context context) {
+        FreioDAO freioDAO = new FreioDAO(context);
         if (isListNull(freioDAO)) {
             Freio freioAmador = new Freio(String.valueOf(R.drawable.freio_basic), 1, 149, -10, 5);
             Freio freioIntermediario = new Freio(String.valueOf(R.drawable.freio_silver), 5, 279, -15, 7);
@@ -93,8 +93,8 @@ public class InicializaBD {
         }
     }
 
-    private void inicializaMotor() {
-        MotorDAO motorDAO = new MotorDAO();
+    private void inicializaMotor(Context context) {
+        MotorDAO motorDAO = new MotorDAO(context);
         if (isListNull(motorDAO)) {
             Motor motorAmador = new Motor(String.valueOf(R.drawable.motor_basic), 1, 399, 13, 20);
             Motor motorIntermediario = new Motor(String.valueOf(R.drawable.motor_silver), 6, 675, 16, 30);
@@ -105,8 +105,8 @@ public class InicializaBD {
         }
     }
 
-    private void inicializaPistao() {
-        PistaoDAO pistaoDAO = new PistaoDAO();
+    private void inicializaPistao(Context context) {
+        PistaoDAO pistaoDAO = new PistaoDAO(context);
         if (isListNull(pistaoDAO)) {
             Pistao pistaoAmador = new Pistao(String.valueOf(R.drawable.pistao_basic), 1, 119, 10);
             Pistao pistaoIntermediario = new Pistao(String.valueOf(R.drawable.pistao_silver), 4, 249, 15);
@@ -117,8 +117,8 @@ public class InicializaBD {
         }
     }
 
-    private void inicializaPneu() {
-        PneuDAO pneuDAO = new PneuDAO();
+    private void inicializaPneu(Context context) {
+        PneuDAO pneuDAO = new PneuDAO(context);
         if (isListNull(pneuDAO)) {
             Pneu pneuAmador = new Pneu(String.valueOf(R.drawable.pneu_basic), 1, 499, 50, 15, 10);
             Pneu pneuIntermediario = new Pneu(String.valueOf(R.drawable.pneu_silver), 6, 799, 65, 20, 15);
@@ -129,8 +129,8 @@ public class InicializaBD {
         }
     }
 
-    private void inicializaTurbina() {
-        TurboDAO turboDAO = new TurboDAO();
+    private void inicializaTurbina(Context context) {
+        TurboDAO turboDAO = new TurboDAO(context);
         if (isListNull(turboDAO)) {
             Turbo turboAmador = new Turbo(String.valueOf(R.drawable.turbo_basic), 3, 299, 30, -20, 3);
             Turbo turboIntermediario = new Turbo(String.valueOf(R.drawable.turbo_silver), 7, 599, 45, -22, 6);

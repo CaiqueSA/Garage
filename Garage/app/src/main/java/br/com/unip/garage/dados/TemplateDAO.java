@@ -29,17 +29,11 @@ public abstract class TemplateDAO<Object> extends SQLiteOpenHelper {
 
     protected SQLiteDatabase db;
 
-    public TemplateDAO(final String tabela, String sqlCreateTable) {
-        super(getContext(), tabela, null, DATABASE_VERSION);
+    public TemplateDAO(final String tabela, String sqlCreateTable, Context context) {
+        super(context, tabela, null, DATABASE_VERSION);
         colunas.add(COLUNA_ID);
         this.CREATE_TABLE = sqlCreateTable;
         TABELA = tabela;
-    }
-
-    private static Context getContext() {
-        Context context = null;
-
-        return context;
     }
 
     @Override

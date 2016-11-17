@@ -1,6 +1,7 @@
 package br.com.unip.garage.dados;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
@@ -38,8 +39,8 @@ public class PneuDAO extends PecaDAO<Pneu> {
             COLUNA_VELOCIDADE + " INTEGER NOT NULL" +
             ")";
 
-    public PneuDAO() {
-        super(TABELA, CREATE_TABLE);
+    public PneuDAO(Context context) {
+        super(TABELA, CREATE_TABLE, context);
         colunas.add(COLUNA_RESISTENCIA);
         colunas.add(COLUNA_ESTABILIDADE);
         colunas.add(COLUNA_VELOCIDADE);
