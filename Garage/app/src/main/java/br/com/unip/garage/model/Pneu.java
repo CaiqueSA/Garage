@@ -6,9 +6,9 @@ public class Pneu extends Peca {
 	private final Integer estabilidade;
 	private final Integer velocidade;
 
-	public Pneu(String imagem, String imagemPequena, Integer nivelDesbloqueio,  Integer preco, Integer resistenciaPneu,
+	public Pneu(String imagem, Integer nivelDesbloqueio,  Integer preco, Integer resistenciaPneu,
 				Integer estabilidade, Integer velocidade) {
-		super(imagem, imagemPequena, nivelDesbloqueio, preco);
+		super(imagem, nivelDesbloqueio, preco);
 		this.resistenciaPneu = resistenciaPneu;
 		this.estabilidade = estabilidade;
 		this.velocidade = velocidade;

@@ -1,19 +1,17 @@
 package br.com.unip.garage.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageButton;
 
 import br.com.unip.garage.R;
 import br.com.unip.garage.controller.GaragemController;
-import br.com.unip.garage.enumeration.TipoPeca;
-import br.com.unip.garage.model.PecaLoja;
+import br.com.unip.garage.listener.ListenerPecasGaragem;
 
-public class GaragemActivity extends Activity implements View.OnClickListener {
+public class GaragemActivity extends AppCompatActivity implements View.OnClickListener {
 
     private GaragemController garagemController = new GaragemController();
 
@@ -24,30 +22,50 @@ public class GaragemActivity extends Activity implements View.OnClickListener {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_garagem);
+
+        setListenerPecas();
+    }
+
+    private void setListenerPecas() {
+        ListenerPecasGaragem listenerPecas = new ListenerPecasGaragem(this);
+        findViewById(R.id.garagem_pneu_amador).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_pneu_intermediario).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_pneu_profissional).setOnClickListener(listenerPecas);
+
+        findViewById(R.id.garagem_freio_amador).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_freio_intermediario).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_freio_profissional).setOnClickListener(listenerPecas);
+
+        findViewById(R.id.garagem_motor_amador).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_motor_intermediario).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_motor_profissional).setOnClickListener(listenerPecas);
+
+        findViewById(R.id.garagem_turbo_amador).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_turbo_intermediario).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_turbo_profissional).setOnClickListener(listenerPecas);
+
+        findViewById(R.id.garagem_pistao_amador).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_pistao_intermediario).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_pistao_profissional).setOnClickListener(listenerPecas);
     }
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.botaoHome) {
+        if (v.getId() == R.id.garagem_home) {
             Intent startHome = new Intent(GaragemActivity.this, MainActivity.class);
             startActivity(startHome);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        } else if (v.getId() == R.id.botaoPneuGaragem) {
-            alterarVisibilidade(findViewById(R.id.pneusPecas));
-        }else if (v.getId() == R.id.botaoPistaoGaragem) {
-            alterarVisibilidade(findViewById(R.id.pistoesPecas));
-        }else if (v.getId() == R.id.botaoMotorGaragem) {
-            alterarVisibilidade(findViewById(R.id.motoresPecas));
-        }else if (v.getId() == R.id.botaoTurboGaragem) {
-            alterarVisibilidade(findViewById(R.id.turbosPecas));
-        }else if (v.getId() == R.id.botaoFreioGaragem) {
-            alterarVisibilidade(findViewById(R.id.freiosPecas));
-        }else if(v.getId() == R.id.botaoFreioBasic){
-            alterarVisibilidade(findViewById(R.id.freiosPecas));
-            ImageButton botao = (ImageButton)findViewById(R.id.botaoFreioGaragem);
-            botao.setImageDrawable(v.getBackground());
+        } else if (v.getId() == R.id.garagem_pneu) {
+            alterarVisibilidade(findViewById(R.id.garagem_frame_pneu));
+        } else if (v.getId() == R.id.garagem_pistao) {
+            alterarVisibilidade(findViewById(R.id.garagem_frame_pistao));
+        } else if (v.getId() == R.id.garagem_motor) {
+            alterarVisibilidade(findViewById(R.id.garagem_frame_motor));
+        } else if (v.getId() == R.id.garagem_turbo) {
+            alterarVisibilidade(findViewById(R.id.garagem_frame_turbo));
+        } else if (v.getId() == R.id.garagem_freio) {
+            alterarVisibilidade(findViewById(R.id.garagem_frame_freio));
         }
-
     }
 
     private void alterarVisibilidade(View view) {

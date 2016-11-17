@@ -25,7 +25,6 @@ public class MotorDAO extends PecaDAO<Motor> {
             TABELA + " ( " +
             COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUNA_IMAGEM + " TEXT NOT NULL, " +
-            COLUNA_IMAGEM_PEQUENA + " TEXT NOT NULL, " +
             COLUNA_NIVEL_DESBLOQUEIO + " INTEGER NOT NULL, " +
             COLUNA_PRECO + " INTEGER NOT NULL, " +
             COLUNA_ACELERACAO + " INTEGER NOT NULL, " +
@@ -43,7 +42,7 @@ public class MotorDAO extends PecaDAO<Motor> {
     protected Motor preenche(Cursor c) {
         Integer velocidade = c.getInt(c.getColumnIndex(COLUNA_VELOCIDADE));
         Integer aceleracao = c.getInt(c.getColumnIndex(COLUNA_ACELERACAO));
-        Motor motor = new Motor(getImagemByCursor(c), getImagemPeqByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), velocidade, aceleracao);
+        Motor motor = new Motor(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), velocidade, aceleracao);
         motor.setId(getIdByCursor(c));
         return motor;
     }
@@ -56,8 +55,6 @@ public class MotorDAO extends PecaDAO<Motor> {
         dadosMotor.put(COLUNA_ACELERACAO, motor.getAceleracao());
         return dadosMotor;
     }
-
-
 
 
 }

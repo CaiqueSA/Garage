@@ -24,7 +24,6 @@ public class PistaoDAO extends PecaDAO<Pistao> {
             TABELA + " (  " +
             COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUNA_IMAGEM + " TEXT NOT NULL, " +
-            COLUNA_IMAGEM_PEQUENA + " TEXT NOT NULL, " +
             COLUNA_NIVEL_DESBLOQUEIO + " INTEGER NOT NULL," +
             COLUNA_PRECO + " INTEGER NOT NULL, " +
             COLUNA_VELOCIDADE + " INTEGER NOT NULL  " +
@@ -39,7 +38,7 @@ public class PistaoDAO extends PecaDAO<Pistao> {
     @Override
     protected Pistao preenche(Cursor c) {
         Integer velocidade = c.getInt(c.getColumnIndex(COLUNA_VELOCIDADE));
-        Pistao pistao = new Pistao(getImagemByCursor(c), getImagemPeqByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), velocidade);
+        Pistao pistao = new Pistao(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), velocidade);
         pistao.setId(getIdByCursor(c));
         return pistao;
     }

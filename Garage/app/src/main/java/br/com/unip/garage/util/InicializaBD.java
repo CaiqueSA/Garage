@@ -1,8 +1,8 @@
 package br.com.unip.garage.util;
 
 import android.content.Context;
-import android.content.res.Resources;
 
+import br.com.unip.garage.R;
 import br.com.unip.garage.builder.BuilderCarro;
 import br.com.unip.garage.dados.CarroDAO;
 import br.com.unip.garage.dados.FreioDAO;
@@ -31,7 +31,7 @@ public class InicializaBD {
         inicializaMotor();
         inicializaPistao();
         inicializaPneu();
-        inicializaTurbo();
+        inicializaTurbina();
         inicializaCarros();
         inicializaUsuario();
     }
@@ -50,26 +50,26 @@ public class InicializaBD {
         CarroDAO carroDAO = new CarroDAO();
         if (isListNull(carroDAO)) {
 
-            Carro carro1 = new BuilderCarro().icone()
-                    .carroImagem(ImagensCarros.CARRO_VERMELHO)
+            Carro carro1 = new BuilderCarro().icone(String.valueOf(R.drawable.icone_vermelho))
+                    .carroImagem(String.valueOf(R.drawable.carro_vermelho))
                     .velocidade(140)
                     .capacidadeCombustivel(50)
                     .build();
 
-            Carro carro2 = new BuilderCarro().icone(ImagensCarros.ICONE_AMARELO)
-                    .carroImagem(ImagensCarros.CARRO_AMARELO)
+            Carro carro2 = new BuilderCarro().icone(String.valueOf(R.drawable.icone_amarelo))
+                    .carroImagem(String.valueOf(R.drawable.carro_amarelo))
                     .velocidade(120)
                     .capacidadeCombustivel(60)
                     .build();
 
-            Carro carro3 = new BuilderCarro().icone(ImagensCarros.ICONE_VERDE)
-                    .carroImagem(ImagensCarros.CARRO_VERDE)
+            Carro carro3 = new BuilderCarro().icone(String.valueOf(R.drawable.icone_verde))
+                    .carroImagem(String.valueOf(R.drawable.carro_verde))
                     .velocidade(90)
                     .capacidadeCombustivel(70)
                     .build();
 
-            Carro carro4 = new BuilderCarro().icone(ImagensCarros.ICONE_AZUL)
-                    .carroImagem(ImagensCarros.CARRO_AZUL)
+            Carro carro4 = new BuilderCarro().icone(String.valueOf(R.drawable.icone_azul))
+                    .carroImagem(String.valueOf(R.drawable.carro_azul))
                     .velocidade(70)
                     .capacidadeCombustivel(80)
                     .build();
@@ -84,9 +84,9 @@ public class InicializaBD {
     private void inicializaFreio() {
         FreioDAO freioDAO = new FreioDAO();
         if (isListNull(freioDAO)) {
-            Freio freioAmador = new Freio(ImagensPecas.FREIO_AMADOR, ImagensPecas.FREIO_AMADOR_PEQ, 1, 149, -10, 5);
-            Freio freioIntermediario = new Freio(ImagensPecas.FREIO_INTERMEDIARIO, ImagensPecas.FREIO_INTERMEDIARIO_PEQ, 5, 279, -15, 7);
-            Freio freioProfissional = new Freio(ImagensPecas.FREIO_PROFISSIONAL, ImagensPecas.FREIO_PROFISSIONAL_PEQ, 8, 500, -20, 8);
+            Freio freioAmador = new Freio(String.valueOf(R.drawable.freio_basic), 1, 149, -10, 5);
+            Freio freioIntermediario = new Freio(String.valueOf(R.drawable.freio_silver), 5, 279, -15, 7);
+            Freio freioProfissional = new Freio(String.valueOf(R.drawable.freio_gold), 8, 500, -20, 8);
             freioDAO.insere(freioAmador);
             freioDAO.insere(freioIntermediario);
             freioDAO.insere(freioProfissional);
@@ -96,9 +96,9 @@ public class InicializaBD {
     private void inicializaMotor() {
         MotorDAO motorDAO = new MotorDAO();
         if (isListNull(motorDAO)) {
-            Motor motorAmador = new Motor(ImagensPecas.MOTOR_AMADOR, ImagensPecas.MOTOR_AMADOR_PEQ, 1, 399, 13, 20);
-            Motor motorIntermediario = new Motor(ImagensPecas.MOTOR_INTERMEDIARIO, ImagensPecas.MOTOR_INTERMEDIARIO_PEQ, 6, 675, 16, 30);
-            Motor motorProfissional = new Motor(ImagensPecas.MOTOR_PROFISSIONAL, ImagensPecas.MOTOR_PROFISSIONAL_PEQ, 10, 900, 20, 50);
+            Motor motorAmador = new Motor(String.valueOf(R.drawable.motor_basic), 1, 399, 13, 20);
+            Motor motorIntermediario = new Motor(String.valueOf(R.drawable.motor_silver), 6, 675, 16, 30);
+            Motor motorProfissional = new Motor(String.valueOf(R.drawable.motor_gold), 10, 900, 20, 50);
             motorDAO.insere(motorAmador);
             motorDAO.insere(motorIntermediario);
             motorDAO.insere(motorProfissional);
@@ -108,9 +108,9 @@ public class InicializaBD {
     private void inicializaPistao() {
         PistaoDAO pistaoDAO = new PistaoDAO();
         if (isListNull(pistaoDAO)) {
-            Pistao pistaoAmador = new Pistao(ImagensPecas.PISTAO_AMADOR, ImagensPecas.PISTAO_AMADOR_PEQ, 1, 119, 10);
-            Pistao pistaoIntermediario = new Pistao(ImagensPecas.PISTAO_INTERMEDIARIO, ImagensPecas.PISTAO_INTERMEDIARIO_PEQ, 4, 249, 15);
-            Pistao pistaoProfissional = new Pistao(ImagensPecas.PISTAO_PROFISSIONAL, ImagensPecas.PISTAO_PROFISSIONAL_PEQ, 8, 330, 25);
+            Pistao pistaoAmador = new Pistao(String.valueOf(R.drawable.pistao_basic), 1, 119, 10);
+            Pistao pistaoIntermediario = new Pistao(String.valueOf(R.drawable.pistao_silver), 4, 249, 15);
+            Pistao pistaoProfissional = new Pistao(String.valueOf(R.drawable.pistao_gold), 8, 330, 25);
             pistaoDAO.insere(pistaoAmador);
             pistaoDAO.insere(pistaoIntermediario);
             pistaoDAO.insere(pistaoProfissional);
@@ -120,21 +120,21 @@ public class InicializaBD {
     private void inicializaPneu() {
         PneuDAO pneuDAO = new PneuDAO();
         if (isListNull(pneuDAO)) {
-            Pneu pneuAmador = new Pneu(ImagensPecas.PNEU_AMADOR, ImagensPecas.PNEU_AMADOR_PEQ, 1, 499, 50, 15, 10);
-            Pneu pneuIntermediario = new Pneu(ImagensPecas.PNEU_INTERMEDIARIO, ImagensPecas.PNEU_INTERMEDIARIO_PEQ, 6, 799, 65, 20, 15);
-            Pneu pneuProfissional = new Pneu(ImagensPecas.PNEU_PROFISSIONAL, ImagensPecas.PNEU_PROFISSIONAL_PEQ, 10, 999, 85, 25, 20);
+            Pneu pneuAmador = new Pneu(String.valueOf(R.drawable.pneu_basic), 1, 499, 50, 15, 10);
+            Pneu pneuIntermediario = new Pneu(String.valueOf(R.drawable.pneu_silver), 6, 799, 65, 20, 15);
+            Pneu pneuProfissional = new Pneu(String.valueOf(R.drawable.pneu_gold), 10, 999, 85, 25, 20);
             pneuDAO.insere(pneuAmador);
             pneuDAO.insere(pneuIntermediario);
             pneuDAO.insere(pneuProfissional);
         }
     }
 
-    private void inicializaTurbo() {
+    private void inicializaTurbina() {
         TurboDAO turboDAO = new TurboDAO();
         if (isListNull(turboDAO)) {
-            Turbo turboAmador = new Turbo(ImagensPecas.TURBO_AMADOR, ImagensPecas.TURBO_AMADOR_PEQ, 3, 299, 30, -20, 3);
-            Turbo turboIntermediario = new Turbo(ImagensPecas.TURBO_INTERMEDIARIO, ImagensPecas.TURBO_INTERMEDIARIO_PEQ, 7, 599, 45, -22, 6);
-            Turbo turboProfissional = new Turbo(ImagensPecas.TURBO_PROFISSIONAL, ImagensPecas.TURBO_PROFISSIONAL_PEQ, 14, 1200, 90, -28, 8);
+            Turbo turboAmador = new Turbo(String.valueOf(R.drawable.turbo_basic), 3, 299, 30, -20, 3);
+            Turbo turboIntermediario = new Turbo(String.valueOf(R.drawable.turbo_silver), 7, 599, 45, -22, 6);
+            Turbo turboProfissional = new Turbo(String.valueOf(R.drawable.turbo_gold), 14, 1200, 90, -28, 8);
             turboDAO.insere(turboAmador);
             turboDAO.insere(turboIntermediario);
             turboDAO.insere(turboProfissional);

@@ -17,24 +17,18 @@ import br.com.unip.garage.model.Pneu;
 public abstract class PecaDAO<P extends Peca> extends TemplateDAO<P> {
 
     public static final String COLUNA_IMAGEM = "IMAGEM";
-    public static final String COLUNA_IMAGEM_PEQUENA = "IMAGEM_PEQUENA";
     public static final String COLUNA_NIVEL_DESBLOQUEIO = "NIVEL_DESBLOQUEIO";
     public static final String COLUNA_PRECO = "PRECO";
 
     public PecaDAO(final String tabela, final String sqlCreateTable) {
         super(tabela, sqlCreateTable);
         colunas.add(COLUNA_IMAGEM);
-        colunas.add(COLUNA_IMAGEM_PEQUENA);
         colunas.add(COLUNA_NIVEL_DESBLOQUEIO);
         colunas.add(COLUNA_PRECO);
     }
 
     protected String getImagemByCursor(final Cursor c) {
         return c.getString(c.getColumnIndex(COLUNA_IMAGEM));
-    }
-
-    protected String getImagemPeqByCursor(final Cursor c) {
-        return c.getString(c.getColumnIndex(COLUNA_IMAGEM_PEQUENA));
     }
 
     protected Integer getNivelDesbloqueioByCursor(final Cursor c) {
@@ -97,7 +91,6 @@ public abstract class PecaDAO<P extends Peca> extends TemplateDAO<P> {
         ContentValues dadosPeca = new ContentValues();
         dadosPeca.put(COLUNA_ID, peca.getId());
         dadosPeca.put(COLUNA_IMAGEM, peca.getImagem());
-        dadosPeca.put(COLUNA_IMAGEM_PEQUENA, peca.getImagemPequena());
         dadosPeca.put(COLUNA_NIVEL_DESBLOQUEIO, peca.getNivelDesbloqueio());
         dadosPeca.put(COLUNA_PRECO, peca.getPreco());
         return dadosPeca;

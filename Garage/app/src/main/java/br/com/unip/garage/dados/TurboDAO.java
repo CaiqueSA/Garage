@@ -25,7 +25,6 @@ public class TurboDAO extends PecaDAO<Turbo> {
             TABELA + " ( " +
             COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUNA_IMAGEM + " TEXT NOT NULL, " +
-            COLUNA_IMAGEM_PEQUENA + " TEXT NOT NULL, " +
             COLUNA_NIVEL_DESBLOQUEIO + " INTEGER NOT NULL," +
             COLUNA_PRECO + " INTEGER NOT NULL, " +
             COLUNA_VELOCIDADE + " INTEGER NOT NULL, " +
@@ -46,7 +45,7 @@ public class TurboDAO extends PecaDAO<Turbo> {
         Integer velocidade = c.getInt(c.getColumnIndex(COLUNA_VELOCIDADE));
         Integer estabilidade = c.getInt(c.getColumnIndex(COLUNA_ESTABILIDADE));
         Integer tempoTurbo = c.getInt(c.getColumnIndex(COLUNA_TEMPO_TURBO));
-        Turbo turbo = new Turbo(getImagemByCursor(c), getImagemPeqByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), velocidade, estabilidade, tempoTurbo);
+        Turbo turbo = new Turbo(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), velocidade, estabilidade, tempoTurbo);
         turbo.setId(getIdByCursor(c));
         return turbo;
     }

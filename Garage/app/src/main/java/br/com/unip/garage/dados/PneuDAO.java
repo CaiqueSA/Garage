@@ -31,7 +31,6 @@ public class PneuDAO extends PecaDAO<Pneu> {
             TABELA + " ( " +
             COLUNA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUNA_IMAGEM + " TEXT NOT NULL, " +
-            COLUNA_IMAGEM_PEQUENA + " TEXT NOT NULL, " +
             COLUNA_NIVEL_DESBLOQUEIO + " INTEGER NOT NULL, " +
             COLUNA_PRECO + " INTEGER NOT NULL, " +
             COLUNA_RESISTENCIA + " INTEGER NOT NULL," +
@@ -53,7 +52,7 @@ public class PneuDAO extends PecaDAO<Pneu> {
         Integer resistenciaPneu = c.getInt(c.getColumnIndex(PneuDAO.COLUNA_RESISTENCIA));
         Integer estabilidade = c.getInt(c.getColumnIndex(PneuDAO.COLUNA_ESTABILIDADE));
         Integer velocidade = c.getInt(c.getColumnIndex(PneuDAO.COLUNA_VELOCIDADE));
-        Pneu pneu = new Pneu(getImagemByCursor(c), getImagemPeqByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), resistenciaPneu, estabilidade, velocidade);
+        Pneu pneu = new Pneu(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), resistenciaPneu, estabilidade, velocidade);
         pneu.setId(getIdByCursor(c));
         return pneu;
     }
