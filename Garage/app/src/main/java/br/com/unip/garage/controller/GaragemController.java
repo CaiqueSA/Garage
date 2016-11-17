@@ -1,7 +1,5 @@
 package br.com.unip.garage.controller;
 
-import java.util.List;
-
 import br.com.unip.garage.R;
 import br.com.unip.garage.enumeration.TipoPeca;
 import br.com.unip.garage.model.PecaLoja;
@@ -26,8 +24,6 @@ public class GaragemController {
         }
         return null;
     }
-
-
 
 
 }
