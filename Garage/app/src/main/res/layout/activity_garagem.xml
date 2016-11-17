@@ -122,11 +122,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|bottom"
-            android:background="@drawable/placa_select"
+            android:background="@drawable/garagem_pneu_placa"
             android:clickable="true"
             android:contentDescription="@string/botao_pneu"
-            android:onClick="onClick"
-            android:src="@drawable/pneu_placa" />
+            android:onClick="onClick" />
 
     </FrameLayout>
 
@@ -190,11 +189,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|bottom"
-            android:background="@drawable/placa_select"
+            android:background="@drawable/garagem_pistao_placa"
             android:clickable="true"
             android:contentDescription="@string/botao_pistao"
-            android:onClick="onClick"
-            android:src="@drawable/pistao_placa" />
+            android:onClick="onClick" />
 
     </FrameLayout>
 
@@ -256,11 +254,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|bottom"
-            android:background="@drawable/placa_select"
+            android:background="@drawable/garagem_motor_placa"
             android:clickable="true"
             android:contentDescription="@string/botao_motor"
-            android:onClick="onClick"
-            android:src="@drawable/motor_placa" />
+            android:onClick="onClick" />
 
     </FrameLayout>
 
@@ -324,11 +321,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|bottom"
-            android:background="@drawable/placa_select"
+            android:background="@drawable/garagem_turbo_placa"
             android:clickable="true"
             android:contentDescription="@string/botao_turbo"
-            android:onClick="onClick"
-            android:src="@drawable/turbo_placa" />
+            android:onClick="onClick" />
 
     </FrameLayout>
 
