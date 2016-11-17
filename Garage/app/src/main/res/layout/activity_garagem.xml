@@ -75,6 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
+            android:layout_gravity="bottom"
             android:visibility="gone">
 
             <ImageView
@@ -154,7 +155,7 @@
 
             <ImageButton
                 android:id="@+id/garagem_pistao_amador"
-                android:layout_width="40dp"
+                android:layout_width="30dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center|bottom"
                 android:layout_marginBottom="40dp"
@@ -164,7 +165,7 @@
 
             <ImageButton
                 android:id="@+id/garagem_pistao_intermediario"
-                android:layout_width="40dp"
+                android:layout_width="30dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal|bottom"
                 android:layout_marginBottom="90dp"
@@ -174,7 +175,7 @@
 
             <ImageButton
                 android:id="@+id/garagem_pistao_profissional"
-                android:layout_width="40dp"
+                android:layout_width="30dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center|bottom"
                 android:layout_marginBottom="140dp"

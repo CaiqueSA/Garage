@@ -2,7 +2,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/placa_select" />
     <item
-        android:drawable="@drawable/pneu_silver"
+        android:drawable="@drawable/turbo_silver"
         android:gravity="center"
         android:width="30dp"
         android:height="30dp"/>

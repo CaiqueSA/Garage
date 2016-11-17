@@ -1,10 +1,7 @@
 package br.com.unip.garage.listener;
 
-import android.databinding.BaseObservable;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import br.com.unip.garage.R;
@@ -19,7 +16,7 @@ public class ListenerPecasGaragem implements View.OnClickListener {
     private ImageButton botaoFreio;
     private ImageButton botaoPneu;
     private ImageButton botaoMotor;
-    private ImageButton botaoTurbina;
+    private ImageButton botaoTurbo;
     private ImageButton botaoPistao;
 
     public ListenerPecasGaragem(AppCompatActivity activity) {
@@ -27,7 +24,7 @@ public class ListenerPecasGaragem implements View.OnClickListener {
         this.botaoFreio = (ImageButton) activity.findViewById(R.id.garagem_freio);
         this.botaoPneu = (ImageButton) activity.findViewById(R.id.garagem_pneu);
         this.botaoMotor = (ImageButton) activity.findViewById(R.id.garagem_motor);
-        this.botaoTurbina = (ImageButton) activity.findViewById(R.id.garagem_turbo);
+        this.botaoTurbo = (ImageButton) activity.findViewById(R.id.garagem_turbo);
         this.botaoPistao = (ImageButton) activity.findViewById(R.id.garagem_pistao);
     }
 
@@ -36,55 +33,65 @@ public class ListenerPecasGaragem implements View.OnClickListener {
         //FREIOS
         if (v.getId() == R.id.garagem_freio_amador) {
             botaoFreio.setBackgroundResource(R.drawable.garagem_freio_amador);
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_freio));
         } else if (v.getId() == R.id.garagem_freio_intermediario) {
             botaoFreio.setBackgroundResource(R.drawable.garagem_freio_intermediario);
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_freio));
         } else if (v.getId() == R.id.garagem_freio_profissional) {
             botaoFreio.setBackgroundResource(R.drawable.garagem_freio_profissional);
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_freio));
         }
         //PNEUS
         else if (v.getId() == R.id.garagem_pneu_amador) {
-            ImageButton botao = (ImageButton) v;
-            Drawable background = botao.getBackground();
-            botaoPneu.setImageResource(R.drawable.pneu_basic);
+            botaoPneu.setBackgroundResource(R.drawable.garagem_pneu_amador);
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_pneu));
         } else if (v.getId() == R.id.garagem_pneu_intermediario) {
-            Drawable background = v.getBackground();
-            botaoPneu.setImageDrawable(background);
+            botaoPneu.setBackgroundResource(R.drawable.garagem_pneu_intermediario);
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_pneu));
         } else if (v.getId() == R.id.garagem_pneu_profissional) {
-            Drawable background = v.getBackground();
-            botaoPneu.setImageDrawable(background);
+            botaoPneu.setBackgroundResource(R.drawable.garagem_pneu_profissional);
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_pneu));
         }
         //MOTORES
         else if (v.getId() == R.id.garagem_motor_amador) {
-            Drawable background = v.getBackground();
-            botaoMotor.setImageDrawable(background);
+            botaoMotor.setBackgroundResource(R.drawable.garagem_motor_amador);
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_motor));
         } else if (v.getId() == R.id.garagem_motor_intermediario) {
-            Drawable background = v.getBackground();
-            botaoMotor.setImageDrawable(background);
+            botaoMotor.setBackgroundResource(R.drawable.garagem_motor_intermediario);
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_motor));
         } else if (v.getId() == R.id.garagem_motor_profissional) {
-            Drawable background = v.getBackground();
-            botaoMotor.setImageDrawable(background);
+            botaoMotor.setBackgroundResource(R.drawable.garagem_motor_profissional);
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_motor));
         }
         //PISTOES
         else if (v.getId() == R.id.garagem_pistao_amador) {
-            Drawable background = v.getBackground();
-            botaoPneu.setImageDrawable(background);
-        } else if (v.getId() == R.id.garagem_pneu_intermediario) {
-            Drawable background = v.getBackground();
-            botaoPneu.setImageDrawable(background);
-        } else if (v.getId() == R.id.garagem_pneu_profissional) {
-            Drawable background = v.getBackground();
-            botaoPneu.setImageDrawable(background);
+            botaoPistao.setBackgroundResource(R.drawable.garagem_pistao_amador);
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_pistao));
+        } else if (v.getId() == R.id.garagem_pistao_intermediario) {
+            botaoPistao.setBackgroundResource(R.drawable.garagem_pistao_intermediario);
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_pistao));
+        } else if (v.getId() == R.id.garagem_pistao_profissional) {
+            botaoPistao.setBackgroundResource(R.drawable.garagem_pistao_profissional);
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_pistao));
         }
-        //TURBINA
+        //TURBO
         else if (v.getId() == R.id.garagem_turbo_amador) {
-            Drawable background = v.getBackground();
-            botaoTurbina.setImageDrawable(background);
+            botaoTurbo.setBackgroundResource(R.drawable.garagem_turbo_amador);
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_turbo));
         } else if (v.getId() == R.id.garagem_turbo_intermediario) {
-            Drawable background = v.getBackground();
-            botaoTurbina.setImageDrawable(background);
+            botaoTurbo.setBackgroundResource(R.drawable.garagem_turbo_intermediario);
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_turbo));
         } else if (v.getId() == R.id.garagem_turbo_profissional) {
-            Drawable background = v.getBackground();
-            botaoTurbina.setImageDrawable(background);
+            botaoTurbo.setBackgroundResource(R.drawable.garagem_turbo_profissional);
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_turbo));
+        }
+    }
+
+    private void alterarVisibilidade(View view) {
+        if (view.getVisibility() == View.GONE) {
+            view.setVisibility(View.VISIBLE);
+        } else {
+            view.setVisibility(View.GONE);
         }
     }
 }
