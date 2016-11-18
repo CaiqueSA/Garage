@@ -34,7 +34,12 @@ public class GaragemActivity extends AppCompatActivity implements View.OnClickLi
             Intent startHome = new Intent(GaragemActivity.this, MainActivity.class);
             startActivity(startHome);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        } else if (v.getId() == R.id.garagem_pneu) {
+        }else if (v.getId() == R.id.garagem_mapas){
+            Intent startHome = new Intent(GaragemActivity.this, MapaActivity.class);
+            startActivity(startHome);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        }
+        else if (v.getId() == R.id.garagem_pneu) {
             alterarVisibilidade(findViewById(R.id.garagem_frame_pneu));
         } else if (v.getId() == R.id.garagem_pistao) {
             alterarVisibilidade(findViewById(R.id.garagem_frame_pistao));
