@@ -29,18 +29,22 @@ public class ListenerCarrosGaragem implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.garagem_seta_direita) {
-            indexCarro++;
-            definirImagemCarro();
+            if (indexCarro < 4) {
+                indexCarro++;
+                definirImagemCarro();
+            }
         }
         if (v.getId() == R.id.garagem_seta_esquerda) {
-            indexCarro--;
-            definirImagemCarro();
+            if (indexCarro > 1) {
+                indexCarro--;
+                definirImagemCarro();
+            }
         }
     }
 
     private void definirImagemCarro() {
         Carro carro = carroDAO.buscaPorId(String.valueOf(indexCarro));
-        if(carro!=null){
+        if (carro != null) {
             imagemCarro.setBackgroundResource(Integer.valueOf(carro.getCarroImagem()));
         }
     }
