@@ -30,13 +30,13 @@
 
     <ImageView
         android:id="@+id/garagem_carro"
-        android:layout_width="140dp"
+        android:layout_width="170dp"
         android:layout_height="75dp"
         android:layout_gravity="end|bottom"
         android:layout_marginBottom="120dp"
         android:layout_marginEnd="95dp"
         android:layout_marginRight="95dp"
-        android:background="@drawable/carro_azul"
+        android:src="@drawable/carro_azul"
         android:contentDescription="@string/carro_azul" />
 
     <ImageButton
@@ -56,8 +56,8 @@
         android:layout_height="25dp"
         android:layout_gravity="end|bottom"
         android:layout_marginBottom="140dp"
-        android:layout_marginEnd="245dp"
-        android:layout_marginRight="245dp"
+        android:layout_marginEnd="280dp"
+        android:layout_marginRight="280dp"
         android:background="@drawable/seta_esquerda"
         android:contentDescription="@string/seta_esquerda" />
 
