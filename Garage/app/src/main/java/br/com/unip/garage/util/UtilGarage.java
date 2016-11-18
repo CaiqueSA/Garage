@@ -1,5 +1,7 @@
 package br.com.unip.garage.util;
 
+import android.content.Context;
+
 import java.util.List;
 
 import br.com.unip.garage.dados.CarroDAO;
@@ -14,10 +16,10 @@ import br.com.unip.garage.model.Usuario;
  */
 public class UtilGarage {
 
-    public static Carro getCarroPlayer() {
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
+    public static Carro getCarroPlayer(Context context) {
+        UsuarioDAO usuarioDAO = new UsuarioDAO(context);
         Usuario usuario = usuarioDAO.buscaPorId("1");
-        CarroDAO carroDAO = new CarroDAO();
+        CarroDAO carroDAO = new CarroDAO(context);
         return carroDAO.buscaPorId(String.valueOf(usuario.getIdCarro()));
     }
 
