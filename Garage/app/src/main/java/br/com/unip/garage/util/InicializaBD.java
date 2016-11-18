@@ -50,10 +50,10 @@ public class InicializaBD {
         CarroDAO carroDAO = new CarroDAO(context);
         if (isListNull(carroDAO)) {
 
-            Carro carro1 = new BuilderCarro().icone(String.valueOf(R.drawable.icone_vermelho))
-                    .carroImagem(String.valueOf(R.drawable.carro_vermelho))
-                    .velocidade(140)
-                    .capacidadeCombustivel(50)
+            Carro carro1 = new BuilderCarro().icone(String.valueOf(R.drawable.icone_azul))
+                    .carroImagem(String.valueOf(R.drawable.carro_azul))
+                    .velocidade(70)
+                    .capacidadeCombustivel(80)
                     .build();
 
             Carro carro2 = new BuilderCarro().icone(String.valueOf(R.drawable.icone_amarelo))
@@ -68,10 +68,10 @@ public class InicializaBD {
                     .capacidadeCombustivel(70)
                     .build();
 
-            Carro carro4 = new BuilderCarro().icone(String.valueOf(R.drawable.icone_azul))
-                    .carroImagem(String.valueOf(R.drawable.carro_azul))
-                    .velocidade(70)
-                    .capacidadeCombustivel(80)
+            Carro carro4 = new BuilderCarro().icone(String.valueOf(R.drawable.icone_vermelho))
+                    .carroImagem(String.valueOf(R.drawable.carro_vermelho))
+                    .velocidade(140)
+                    .capacidadeCombustivel(50)
                     .build();
 
             carroDAO.insere(carro1);
