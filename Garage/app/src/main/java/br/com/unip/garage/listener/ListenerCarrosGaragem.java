@@ -45,7 +45,7 @@ public class ListenerCarrosGaragem implements View.OnClickListener {
     private void definirImagemCarro() {
         Carro carro = carroDAO.buscaPorId(String.valueOf(indexCarro));
         if (carro != null) {
-            imagemCarro.setBackgroundResource(Integer.valueOf(carro.getCarroImagem()));
+            imagemCarro.setImageResource(Integer.valueOf(carro.getCarroImagem()));
         }
     }
 }
