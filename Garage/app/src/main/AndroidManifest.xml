@@ -13,6 +13,7 @@
         <activity android:name=".activity.CreditosActivity" />
         <activity android:name=".activity.LojaActivity" />
         <activity android:name=".activity.GaragemActivity" />
+        <activity android:name=".activity.MapaActivity" />
         <activity android:name=".activity.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MapaActivity"></activity>
+        <activity android:name=".activity.CorridaMapa1Activity"></activity>
     </application>
 
 </manifest>
