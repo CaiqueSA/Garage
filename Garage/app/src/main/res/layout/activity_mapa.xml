@@ -3,6 +3,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_mapa"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background_mapas">
 
+    <ImageButton
+        android:id="@+id/mapa_mapa1"
+        android:layout_width="180dp"
+        android:layout_height="120dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/mapa_1"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/mapa_mapa2"
+        android:layout_width="180dp"
+        android:layout_height="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="230dp"
+        android:layout_marginRigth="230dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/mapa_2"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/mapa_mapa3"
+        android:layout_width="180dp"
+        android:layout_height="120dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="230dp"
+        android:background="@drawable/mapa_3"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/mapa_mapa4"
+        android:layout_width="180dp"
+        android:layout_height="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="230dp"
+        android:layout_marginRigth="230dp"
+        android:layout_marginTop="230dp"
+        android:background="@drawable/mapa_4"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginEnd="55dp"
+        android:id="@+id/mapa_voltar"
+        android:background="@drawable/botao_voltar"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="270dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginEnd="55dp"
+        android:id="@+id/mapa_jogar"
+        android:background="@drawable/botao_jogar"
+        tools:ignore="ContentDescription" />
 </RelativeLayout>
