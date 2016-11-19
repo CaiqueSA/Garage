@@ -4,10 +4,12 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
+import android.text.BoringLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.unip.garage.enumeration.NivelPeca;
 import br.com.unip.garage.model.Peca;
 import br.com.unip.garage.model.Pneu;
 
@@ -20,12 +22,16 @@ public abstract class PecaDAO<P extends Peca> extends TemplateDAO<P> {
     public static final String COLUNA_IMAGEM = "IMAGEM";
     public static final String COLUNA_NIVEL_DESBLOQUEIO = "NIVEL_DESBLOQUEIO";
     public static final String COLUNA_PRECO = "PRECO";
+    public static final String COLUNA_POSSUI = "POSSUI";
+    public static final String COLUNA_NIVEL = "NIVEL";
 
     public PecaDAO(final String tabela, final String sqlCreateTable, Context context) {
         super(tabela, sqlCreateTable, context);
         colunas.add(COLUNA_IMAGEM);
         colunas.add(COLUNA_NIVEL_DESBLOQUEIO);
         colunas.add(COLUNA_PRECO);
+        colunas.add(COLUNA_POSSUI);
+        colunas.add(COLUNA_NIVEL);
     }
 
     protected String getImagemByCursor(final Cursor c) {
@@ -38,6 +44,14 @@ public abstract class PecaDAO<P extends Peca> extends TemplateDAO<P> {
 
     protected Integer getPrecoByCursor(final Cursor c) {
         return c.getInt(c.getColumnIndex(COLUNA_PRECO));
+    }
+
+    protected Boolean getPossuiByCursor(final Cursor c) {
+        return Boolean.valueOf(c.getString(c.getColumnIndex(COLUNA_POSSUI)));
+    }
+
+    protected NivelPeca getNivelByCursor(final Cursor c) {
+        return NivelPeca.valueOf(c.getString(c.getColumnIndex(COLUNA_NIVEL)));
     }
 
     @Override
@@ -94,6 +108,8 @@ public abstract class PecaDAO<P extends Peca> extends TemplateDAO<P> {
         dadosPeca.put(COLUNA_IMAGEM, peca.getImagem());
         dadosPeca.put(COLUNA_NIVEL_DESBLOQUEIO, peca.getNivelDesbloqueio());
         dadosPeca.put(COLUNA_PRECO, peca.getPreco());
+        dadosPeca.put(COLUNA_POSSUI, peca.getPossui());
+        dadosPeca.put(COLUNA_NIVEL_DESBLOQUEIO, peca.getNivelPeca().toString());
         return dadosPeca;
     }
 

@@ -28,7 +28,8 @@ public class FreioDAO extends PecaDAO<Freio> {
             COLUNA_NIVEL_DESBLOQUEIO + " integer not null, " +
             COLUNA_PRECO + " integer not null, " +
             COLUNA_FRENAGEM + " integer not null, " +
-            COLUNA_ESTABILIDADE + " integer not null " +
+            COLUNA_ESTABILIDADE + " integer not null, " +
+            COLUNA_POSSUI + " TEXT"+
             ")";
 
     public FreioDAO(Context context) {
@@ -42,8 +43,9 @@ public class FreioDAO extends PecaDAO<Freio> {
     protected Freio preenche(Cursor c) {
         Integer frenagem = c.getInt(c.getColumnIndex(COLUNA_FRENAGEM));
         Integer estabilidade = c.getInt(c.getColumnIndex(COLUNA_ESTABILIDADE));
-        Freio freio = new Freio(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), frenagem, estabilidade);
+        Freio freio = new Freio(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), frenagem, estabilidade, getNivelByCursor(c));
         freio.setId(getIdByCursor(c));
+        freio.setNivelPeca(getNivelByCursor(c));
         return freio;
     }
 

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
 
+import br.com.unip.garage.enumeration.NivelPeca;
 import br.com.unip.garage.model.Turbo;
 
 /**
@@ -30,7 +31,8 @@ public class TurboDAO extends PecaDAO<Turbo> {
             COLUNA_PRECO + " INTEGER NOT NULL, " +
             COLUNA_VELOCIDADE + " INTEGER NOT NULL, " +
             COLUNA_ESTABILIDADE + " INTEGER NOT NULL, " +
-            COLUNA_TEMPO_TURBO + " INTEGER NOT NULL" +
+            COLUNA_TEMPO_TURBO + " INTEGER NOT NULL," +
+            COLUNA_POSSUI + " TEXT"+
             ")";
 
     public TurboDAO(Context context) {
@@ -46,8 +48,9 @@ public class TurboDAO extends PecaDAO<Turbo> {
         Integer velocidade = c.getInt(c.getColumnIndex(COLUNA_VELOCIDADE));
         Integer estabilidade = c.getInt(c.getColumnIndex(COLUNA_ESTABILIDADE));
         Integer tempoTurbo = c.getInt(c.getColumnIndex(COLUNA_TEMPO_TURBO));
-        Turbo turbo = new Turbo(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), velocidade, estabilidade, tempoTurbo);
+        Turbo turbo = new Turbo(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), velocidade, estabilidade, tempoTurbo, getNivelByCursor(c));
         turbo.setId(getIdByCursor(c));
+        turbo.setPossui(getPossuiByCursor(c));
         return turbo;
     }
 

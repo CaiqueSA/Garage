@@ -36,6 +36,7 @@ public class CarroDAO extends TemplateDAO<Carro> {
     public static final String COLUNA_IDFREIO = "ID_FREIO";
     public static final String COLUNA_IDPISTAO = "ID_PISTAO";
     public static final String COLUNA_IDTURBO = "ID_TURBO";
+    public static final String COLUNA_POSSUI = "POSSUI";
 
     public static final String COLUNA_IDPNEU = "ID_PNEU";
     //SQL para criar a tabela
@@ -50,7 +51,8 @@ public class CarroDAO extends TemplateDAO<Carro> {
             COLUNA_IDFREIO + " INTEGER," +
             COLUNA_IDPISTAO + " INTEGER," +
             COLUNA_IDTURBO + " INTEGER," +
-            COLUNA_IDPNEU + " INTEGER" +
+            COLUNA_IDPNEU + " INTEGER," +
+            COLUNA_POSSUI + " BOOLEAN" +
             ")";
 
     public CarroDAO(Context context) {

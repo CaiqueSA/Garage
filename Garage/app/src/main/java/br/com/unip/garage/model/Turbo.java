@@ -1,5 +1,7 @@
 package br.com.unip.garage.model;
 
+import br.com.unip.garage.enumeration.NivelPeca;
+
 public class Turbo extends Peca {
 
     private final Integer velocidade;
@@ -7,8 +9,8 @@ public class Turbo extends Peca {
     private final Integer tempoTurbo;
 
     public Turbo(String imagem, Integer nivelDesbloqueio,
-                 Integer preco, Integer velocidade, Integer estabilidade, Integer tempoTurbo) {
-        super(imagem, nivelDesbloqueio, preco);
+                 Integer preco, Integer velocidade, Integer estabilidade, Integer tempoTurbo, NivelPeca nivelPeca) {
+        super(imagem, nivelDesbloqueio, preco, nivelPeca);
         this.velocidade = velocidade;
         this.estabilidade = estabilidade;
         this.tempoTurbo = tempoTurbo;

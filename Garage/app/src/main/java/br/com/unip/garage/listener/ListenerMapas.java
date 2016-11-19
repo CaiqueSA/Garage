@@ -1,8 +1,13 @@
 package br.com.unip.garage.listener;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageButton;
+
+import br.com.unip.garage.activity.CorridaMapa1Activity;
+import br.com.unip.garage.activity.GaragemActivity;
+import br.com.unip.garage.activity.MainActivity;
 
 /**
  * Created by caique on 18/11/16.
@@ -43,6 +48,16 @@ public class ListenerMapas implements View.OnClickListener {
         } else if (v.getId() == R.id.mapa_mapa4) {
             mapa4.setBackgroundResource(R.drawable.mapa_4_select);
             mapa1.setTag(4);
+        } else if (v.getId() == R.id.mapa_voltar) {
+            Intent startGaragem = new Intent(activity, GaragemActivity.class);
+            activity.startActivity(startGaragem);
+            activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        } else if (v.getId() == R.id.mapa_jogar) {
+            Integer mapa = getMapaSelecionado();
+            Intent startCorrida = new Intent(activity, CorridaMapa1Activity.class);
+            startCorrida.putExtra("mapa_selecionado", mapa);
+            activity.startActivity(startCorrida);
+            activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
     }
 

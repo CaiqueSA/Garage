@@ -28,7 +28,8 @@ public class MotorDAO extends PecaDAO<Motor> {
             COLUNA_NIVEL_DESBLOQUEIO + " INTEGER NOT NULL, " +
             COLUNA_PRECO + " INTEGER NOT NULL, " +
             COLUNA_ACELERACAO + " INTEGER NOT NULL, " +
-            COLUNA_VELOCIDADE + " INTEGER NOT NULL " +
+            COLUNA_VELOCIDADE + " INTEGER NOT NULL, " +
+            COLUNA_POSSUI + " TEXT" +
             ")";
 
     public MotorDAO(Context context) {
@@ -42,8 +43,9 @@ public class MotorDAO extends PecaDAO<Motor> {
     protected Motor preenche(Cursor c) {
         Integer velocidade = c.getInt(c.getColumnIndex(COLUNA_VELOCIDADE));
         Integer aceleracao = c.getInt(c.getColumnIndex(COLUNA_ACELERACAO));
-        Motor motor = new Motor(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), velocidade, aceleracao);
+        Motor motor = new Motor(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), velocidade, aceleracao, getNivelByCursor(c));
         motor.setId(getIdByCursor(c));
+        motor.setNivelPeca(getNivelByCursor(c));
         return motor;
     }
 

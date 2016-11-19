@@ -9,12 +9,14 @@ import android.view.WindowManager;
 
 import br.com.unip.garage.R;
 import br.com.unip.garage.controller.GaragemController;
+import br.com.unip.garage.dados.FreioDAO;
 import br.com.unip.garage.listener.ListenerCarrosGaragem;
 import br.com.unip.garage.listener.ListenerPecasGaragem;
+import br.com.unip.garage.model.Freio;
 
 public class GaragemActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private GaragemController garagemController = new GaragemController();
+    private GaragemController garagemController = new GaragemController(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +37,8 @@ public class GaragemActivity extends AppCompatActivity implements View.OnClickLi
             startActivity(startHome);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }else if (v.getId() == R.id.garagem_mapas){
-            Intent startHome = new Intent(GaragemActivity.this, MapaActivity.class);
-            startActivity(startHome);
+            Intent startMapas = new Intent(GaragemActivity.this, MapaActivity.class);
+            startActivity(startMapas);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
         else if (v.getId() == R.id.garagem_pneu) {
@@ -89,4 +91,6 @@ public class GaragemActivity extends AppCompatActivity implements View.OnClickLi
         findViewById(R.id.garagem_seta_direita).setOnClickListener(listenerCarros);
         findViewById(R.id.garagem_seta_esquerda).setOnClickListener(listenerCarros);
     }
+
+
 }

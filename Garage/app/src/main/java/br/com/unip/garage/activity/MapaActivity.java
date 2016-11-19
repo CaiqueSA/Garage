@@ -27,5 +27,8 @@ public class MapaActivity extends AppCompatActivity {
         findViewById(R.id.mapa_mapa2).setOnClickListener(listenerMapas);
         findViewById(R.id.mapa_mapa3).setOnClickListener(listenerMapas);
         findViewById(R.id.mapa_mapa4).setOnClickListener(listenerMapas);
+        findViewById(R.id.mapa_mapa4).setOnClickListener(listenerMapas);
+        findViewById(R.id.mapa_voltar).setOnClickListener(listenerMapas);
+        findViewById(R.id.mapa_jogar).setOnClickListener(listenerMapas);
     }
 }

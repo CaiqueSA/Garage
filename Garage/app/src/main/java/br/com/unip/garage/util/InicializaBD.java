@@ -8,7 +8,6 @@ import br.com.unip.garage.dados.CarroDAO;
 import br.com.unip.garage.dados.FreioDAO;
 import br.com.unip.garage.dados.MotorDAO;
 import br.com.unip.garage.dados.PistaoDAO;
-import br.com.unip.garage.dados.PneuDAO;
 import br.com.unip.garage.dados.TemplateDAO;
 import br.com.unip.garage.dados.TurboDAO;
 import br.com.unip.garage.dados.UsuarioDAO;
