@@ -22,6 +22,7 @@ public class LojaActivity extends AppCompatActivity {
 
     private void setListenerLoja() {
         ListenerLoja listenerLoja = new ListenerLoja(this);
+        findViewById(R.id.loja_voltar).setOnClickListener(listenerLoja);
         findViewById(R.id.loja_pneu).setOnClickListener(listenerLoja);
         findViewById(R.id.loja_turbo).setOnClickListener(listenerLoja);
         findViewById(R.id.loja_motor).setOnClickListener(listenerLoja);
