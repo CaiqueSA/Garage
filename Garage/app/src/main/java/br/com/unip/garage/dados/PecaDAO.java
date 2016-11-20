@@ -4,14 +4,12 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
-import android.text.BoringLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.unip.garage.enumeration.NivelPeca;
 import br.com.unip.garage.model.Peca;
-import br.com.unip.garage.model.Pneu;
 
 /**
  * Created by caique on 16/10/16.
@@ -88,6 +86,27 @@ public abstract class PecaDAO<P extends Peca> extends TemplateDAO<P> {
             String[] columns = new String[colunas.size()];
             columns = colunas.toArray(columns);
             c = db.query(TABELA, columns, COLUNA_ID + "=?", new String[]{id}, null, null, null, null);
+            if (c != null) {
+                c.moveToFirst();
+                peca = preenche(c);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            close();
+            c.close();
+        }
+        return (P) peca;
+    }
+
+    public P buscaPorNivelPeca(String nivelPeca) {
+        Peca peca = null;
+        Cursor c = null;
+        try {
+            open();
+            String[] columns = new String[colunas.size()];
+            columns = colunas.toArray(columns);
+            c = db.query(TABELA, columns, COLUNA_NIVEL + "=?", new String[]{nivelPeca}, null, null, null, null);
             if (c != null) {
                 c.moveToFirst();
                 peca = preenche(c);
