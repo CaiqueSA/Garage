@@ -4,12 +4,10 @@
     android:id="@+id/activity_loja"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_loja"
-    android:orientation="horizontal"
-    tools:context="br.com.unip.garage.activity.LojaActivity">
+    android:background="@drawable/background_loja">
 
     <ImageButton
-        android:id="@+id/botaoVoltarLoja"
+        android:id="@+id/loja_voltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -19,12 +17,10 @@
         android:layout_marginEnd="43dp"
         android:layout_marginRight="43dp"
         android:background="@drawable/botao_voltar"
-        android:clickable="true"
-        android:onClick="onClick"
         android:contentDescription="@string/botao_voltar" />
 
     <ImageButton
-        android:id="@+id/botaoPneuLoja"
+        android:id="@+id/loja_pneu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -34,102 +30,89 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="44dp"
         android:background="@drawable/botao_pneu"
-        android:clickable="true"
-        android:onClick="onClick"
         android:contentDescription="@string/botao_pneu" />
 
     <ImageButton
-        android:id="@+id/botaoTurboLoja"
+        android:id="@+id/loja_turbo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/botaoFreioLoja"
+        android:layout_alignTop="@+id/loja_freio"
         android:layout_marginLeft="39dp"
         android:layout_marginStart="39dp"
-        android:layout_toEndOf="@+id/botaoPneuLoja"
-        android:layout_toRightOf="@+id/botaoPneuLoja"
+        android:layout_toEndOf="@+id/loja_pneu"
+        android:layout_toRightOf="@+id/loja_pneu"
         android:background="@drawable/botao_turbo"
-        android:clickable="true"
-        android:onClick="onClick"
         android:contentDescription="@string/botao_turbo" />
 
     <ImageButton
-        android:id="@+id/botaoMotorLoja"
+        android:id="@+id/loja_motor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/botaoPistaoLoja"
+        android:layout_alignBottom="@+id/loja_pistao"
         android:layout_marginLeft="39dp"
         android:layout_marginStart="39dp"
-        android:layout_toEndOf="@+id/botaoFreioLoja"
-        android:layout_toRightOf="@+id/botaoFreioLoja"
+        android:layout_toEndOf="@+id/loja_freio"
+        android:layout_toRightOf="@+id/loja_freio"
         android:background="@drawable/botao_motor"
-        android:clickable="true"
-        android:onClick="onClick"
         android:contentDescription="@string/botao_motor" />
 
     <ImageButton
-        android:id="@+id/botaoFreioLoja"
+        android:id="@+id/loja_freio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/botaoPneuLoja"
+        android:layout_alignTop="@+id/loja_pneu"
         android:layout_marginLeft="39dp"
         android:layout_marginStart="39dp"
-        android:layout_toEndOf="@+id/botaoTurboLoja"
-        android:layout_toRightOf="@+id/botaoTurboLoja"
+        android:layout_toEndOf="@+id/loja_turbo"
+        android:layout_toRightOf="@+id/loja_turbo"
         android:background="@drawable/botao_freio"
-        android:clickable="true"
-        android:onClick="onClick"
         android:contentDescription="@string/botao_freio" />
 
     <ImageButton
-        android:id="@+id/botaoPistaoLoja"
+        android:id="@+id/loja_pistao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/loja_freio"
+        android:layout_alignEnd="@+id/loja_voltar"
+        android:layout_alignRight="@+id/loja_voltar"
         android:layout_marginEnd="13dp"
         android:layout_marginRight="13dp"
         android:background="@drawable/botao_pistao"
-        android:clickable="true"
-        android:onClick="onClick"
-        android:contentDescription="@string/botao_pistao"
-        android:layout_alignBottom="@+id/botaoFreioLoja"
-        android:layout_alignRight="@+id/botaoVoltarLoja"
-        android:layout_alignEnd="@+id/botaoVoltarLoja" />
+        android:contentDescription="@string/botao_pistao" />
 
 
     <ImageButton
+        android:id="@+id/loja_peca_amadora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/pecaAmadora"
+        android:layout_alignLeft="@+id/loja_pneu"
+        android:layout_alignStart="@+id/loja_pneu"
+        android:layout_alignTop="@+id/loja_peca_intermediaria"
         android:background="@drawable/campo_loja"
-        android:src="@drawable/freio_basic"
-        android:onClick="onClick"
         android:contentDescription="@string/peca_amadora"
-        android:layout_alignTop="@+id/pecaIntermediaria"
-        android:layout_alignLeft="@+id/botaoPneuLoja"
-        android:layout_alignStart="@+id/botaoPneuLoja"
-        android:visibility="invisible"/>
+        android:src="@drawable/freio_basic"
+        android:visibility="gone" />
 
     <ImageButton
+        android:id="@+id/loja_peca_profissional"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/pecaProfissional"
-        android:background="@drawable/campo_loja"
-        android:onClick="onClick"
-        android:contentDescription="@string/peca_profissional"
+        android:layout_alignEnd="@+id/loja_pistao"
+        android:layout_alignRight="@+id/loja_pistao"
+        android:layout_below="@+id/loja_motor"
         android:layout_marginTop="46dp"
-        android:layout_below="@+id/botaoMotorLoja"
-        android:layout_alignRight="@+id/botaoPistaoLoja"
-        android:layout_alignEnd="@+id/botaoPistaoLoja"
-        android:visibility="invisible"/>
+        android:background="@drawable/campo_loja"
+        android:contentDescription="@string/peca_profissional"
+        android:visibility="gone" />
 
     <ImageButton
+        android:id="@+id/loja_peca_intermediaria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/pecaIntermediaria"
-        android:onClick="onClick"
+        android:layout_alignTop="@+id/loja_peca_profissional"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/campo_loja"
         android:contentDescription="@string/peca_itermediaria"
-        android:layout_alignTop="@+id/pecaProfissional"
-        android:layout_centerHorizontal="true"
-        android:visibility="invisible"/>
+        android:visibility="gone" />
 
 </RelativeLayout>

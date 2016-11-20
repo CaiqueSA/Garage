@@ -14,7 +14,6 @@ import br.com.unip.garage.dados.TurboDAO;
 import br.com.unip.garage.dados.UsuarioDAO;
 import br.com.unip.garage.enumeration.TipoPeca;
 import br.com.unip.garage.model.Peca;
-import br.com.unip.garage.model.PecaLoja;
 import br.com.unip.garage.model.Usuario;
 
 /**
@@ -45,7 +44,7 @@ public class LojaController {
         }
     }
 
-    private PecaDAO getPecaDAO(TipoPeca peca) {
+    public PecaDAO getPecaDAO(TipoPeca peca) {
         if (TipoPeca.FREIO == peca)
             return new FreioDAO(activity);
         if (TipoPeca.MOTOR == peca)
