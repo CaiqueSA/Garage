@@ -1,10 +1,14 @@
 package br.com.unip.garage.listener;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 
 import br.com.unip.garage.R;
+import br.com.unip.garage.activity.GaragemActivity;
+import br.com.unip.garage.activity.MainActivity;
+import br.com.unip.garage.activity.MapaActivity;
 import br.com.unip.garage.dados.CarroDAO;
 import br.com.unip.garage.model.Carro;
 
@@ -39,6 +43,14 @@ public class ListenerCarrosGaragem implements View.OnClickListener {
                 indexCarro--;
                 definirImagemCarro();
             }
+        } else if (v.getId() == R.id.garagem_home) {
+            Intent startHome = new Intent(activity, MainActivity.class);
+            activity.startActivity(startHome);
+            activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        } else if (v.getId() == R.id.garagem_mapas) {
+            Intent startMapas = new Intent(activity, MapaActivity.class);
+            activity.startActivity(startMapas);
+            activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
     }
 
