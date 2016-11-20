@@ -37,7 +37,8 @@ public class PneuDAO extends PecaDAO<Pneu> {
             COLUNA_RESISTENCIA + " INTEGER NOT NULL," +
             COLUNA_ESTABILIDADE + " INTEGER NOT NULL," +
             COLUNA_VELOCIDADE + " INTEGER NOT NULL," +
-            COLUNA_POSSUI + " TEXT"+
+            COLUNA_POSSUI + " TEXT, "+
+            COLUNA_NIVEL + " TEXT"+
             ")";
 
     public PneuDAO(Context context) {

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_mapa"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_mapas">
 
     <ImageButton
-        android:id="@+id/mapa_mapa1"
+        android:id="@+id/mapa_mapa_um"
         android:layout_width="180dp"
         android:layout_height="120dp"
         android:layout_alignParentLeft="true"
@@ -15,23 +14,24 @@
         android:layout_marginLeft="70dp"
         android:layout_marginStart="70dp"
         android:layout_marginTop="100dp"
-        android:background="@drawable/mapa_1"
+        android:background="@drawable/mapa_um"
         tools:ignore="ContentDescription" />
 
     <ImageButton
-        android:id="@+id/mapa_mapa2"
+        android:id="@+id/mapa_mapa_dois"
         android:layout_width="180dp"
         android:layout_height="120dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="230dp"
-        android:layout_marginRigth="230dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="270dp"
+        android:layout_marginStart="270dp"
         android:layout_marginTop="100dp"
-        android:background="@drawable/mapa_2"
-        tools:ignore="ContentDescription" />
+        android:background="@drawable/mapa_dois"
+        tools:ignore="ContentDescription"
+        android:layout_marginRight="230dp" />
 
     <ImageButton
-        android:id="@+id/mapa_mapa3"
+        android:id="@+id/mapa_mapa_treis"
         android:layout_width="180dp"
         android:layout_height="120dp"
         android:layout_alignParentLeft="true"
@@ -39,20 +39,21 @@
         android:layout_marginLeft="70dp"
         android:layout_marginStart="70dp"
         android:layout_marginTop="230dp"
-        android:background="@drawable/mapa_3"
+        android:background="@drawable/mapa_tres"
         tools:ignore="ContentDescription" />
 
     <ImageButton
-        android:id="@+id/mapa_mapa4"
+        android:id="@+id/mapa_mapa_quatro"
         android:layout_width="180dp"
         android:layout_height="120dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRigth="230dp"
-        android:layout_marginEnd="230dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="270dp"
+        android:layout_marginStart="270dp"
         android:layout_marginTop="230dp"
-        android:background="@drawable/mapa_4"
-        tools:ignore="ContentDescription" />
+        android:background="@drawable/mapa_quatro"
+        tools:ignore="ContentDescription"
+        android:layout_marginRight="230dp" />
 
     <ImageButton
         android:layout_width="120dp"
@@ -75,6 +76,6 @@
         android:layout_marginRight="55dp"
         android:layout_marginEnd="55dp"
         android:id="@+id/mapa_jogar"
-        android:background="@drawable/botao_jogar"
+        android:background="@drawable/botao_jogar_mapas"
         tools:ignore="ContentDescription" />
 </RelativeLayout>

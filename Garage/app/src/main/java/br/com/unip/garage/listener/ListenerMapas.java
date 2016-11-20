@@ -5,9 +5,9 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.ImageButton;
 
+import br.com.unip.garage.R;
 import br.com.unip.garage.activity.CorridaMapa1Activity;
 import br.com.unip.garage.activity.GaragemActivity;
-import br.com.unip.garage.activity.MainActivity;
 
 /**
  * Created by caique on 18/11/16.
@@ -17,18 +17,18 @@ public class ListenerMapas implements View.OnClickListener {
 
     private ImageButton jogar;
     private ImageButton voltar;
-    private ImageButton mapa3;
-    private ImageButton mapa1;
-    private ImageButton mapa2;
-    private ImageButton mapa4;
+    private ImageButton mapa_treis;
+    private ImageButton mapa_um;
+    private ImageButton mapa_dois;
+    private ImageButton mapa_quatro;
     private Activity activity;
 
     public ListenerMapas(Activity activity) {
         this.activity = activity;
-        mapa1 = (ImageButton) activity.findViewById(R.id.mapa_mapa1);
-        mapa2 = (ImageButton) activity.findViewById(R.id.mapa_mapa2);
-        mapa3 = (ImageButton) activity.findViewById(R.id.mapa_mapa3);
-        mapa4 = (ImageButton) activity.findViewById(R.id.mapa_mapa4);
+        mapa_um = (ImageButton) activity.findViewById(R.id.mapa_mapa_um);
+        mapa_dois = (ImageButton) activity.findViewById(R.id.mapa_mapa_dois);
+        mapa_treis = (ImageButton) activity.findViewById(R.id.mapa_mapa_treis);
+        mapa_quatro = (ImageButton) activity.findViewById(R.id.mapa_mapa_quatro);
         voltar = (ImageButton) activity.findViewById(R.id.mapa_voltar);
         jogar = (ImageButton) activity.findViewById(R.id.mapa_jogar);
     }
@@ -36,18 +36,18 @@ public class ListenerMapas implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         removerSelecaoMapas();
-        if (v.getId() == R.id.mapa_mapa1) {
-            mapa1.setBackgroundResource(R.drawable.mapa_1_select);
-            mapa1.setTag(1);
-        } else if (v.getId() == R.id.mapa_mapa2) {
-            mapa2.setBackgroundResource(R.drawable.mapa_2_select);
-            mapa1.setTag(2);
-        } else if (v.getId() == R.id.mapa_mapa3) {
-            mapa3.setBackgroundResource(R.drawable.mapa_3_select);
-            mapa1.setTag(3);
-        } else if (v.getId() == R.id.mapa_mapa4) {
-            mapa4.setBackgroundResource(R.drawable.mapa_4_select);
-            mapa1.setTag(4);
+        if (v.getId() == R.id.mapa_mapa_um) {
+            mapa_um.setBackgroundResource(R.drawable.mapa_um_select);
+            mapa_um.setTag(1);
+        } else if (v.getId() == R.id.mapa_mapa_dois) {
+            mapa_dois.setBackgroundResource(R.drawable.mapa_dois_select);
+            mapa_um.setTag(2);
+        } else if (v.getId() == R.id.mapa_mapa_treis) {
+            mapa_treis.setBackgroundResource(R.drawable.mapa_tres_select);
+            mapa_um.setTag(3);
+        } else if (v.getId() == R.id.mapa_mapa_quatro) {
+            mapa_quatro.setBackgroundResource(R.drawable.mapa_quatro_select);
+            mapa_um.setTag(4);
         } else if (v.getId() == R.id.mapa_voltar) {
             Intent startGaragem = new Intent(activity, GaragemActivity.class);
             activity.startActivity(startGaragem);
@@ -62,26 +62,27 @@ public class ListenerMapas implements View.OnClickListener {
     }
 
     private void removerSelecaoMapas() {
-        mapa1.setBackgroundResource(R.drawable.mapa_1);
-        mapa1.setTag(null);
-        mapa2.setBackgroundResource(R.drawable.mapa_2);
-        mapa2.setTag(null);
-        mapa3.setBackgroundResource(R.drawable.mapa_3);
-        mapa3.setTag(null);
-        mapa4.setBackgroundResource(R.drawable.mapa_4);
-        mapa4.setTag(null);
+        mapa_um.setBackgroundResource(R.drawable.mapa_um);
+        mapa_um.setTag(null);
+        mapa_dois.setBackgroundResource(R.drawable.mapa_dois);
+        mapa_dois.setTag(null);
+        mapa_treis.setBackgroundResource(R.drawable.mapa_tres);
+        mapa_treis.setTag(null);
+        mapa_quatro.setBackgroundResource(R.drawable.mapa_quatro);
+        mapa_quatro.setTag(null);
     }
 
     private Integer getMapaSelecionado() {
-        if (mapa1.getTag() != null) {
-            return (Integer) mapa1.getTag();
-        } else if (mapa2.getTag() != null) {
-            return (Integer) mapa2.getTag();
-        } else if (mapa3.getTag() != null) {
-            return (Integer) mapa3.getTag();
-        } else if (mapa4.getTag() != null) {
-            return (Integer) mapa4.getTag();
+        if (mapa_um.getTag() != null) {
+            return (Integer) mapa_um.getTag();
+        } else if (mapa_dois.getTag() != null) {
+            return (Integer) mapa_dois.getTag();
+        } else if (mapa_treis.getTag() != null) {
+            return (Integer) mapa_treis.getTag();
+        } else if (mapa_quatro.getTag() != null) {
+            return (Integer) mapa_quatro.getTag();
         }
+        return null;
     }
 }
 

@@ -27,7 +27,8 @@ public class PistaoDAO extends PecaDAO<Pistao> {
             COLUNA_NIVEL_DESBLOQUEIO + " INTEGER NOT NULL," +
             COLUNA_PRECO + " INTEGER NOT NULL, " +
             COLUNA_VELOCIDADE + " INTEGER NOT NULL, " +
-            COLUNA_POSSUI + " TEXT"+
+            COLUNA_POSSUI + " TEXT, "+
+            COLUNA_NIVEL + " TEXT"+
             ")";
 
     public PistaoDAO(Context context) {

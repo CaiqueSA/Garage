@@ -29,7 +29,8 @@ public class MotorDAO extends PecaDAO<Motor> {
             COLUNA_PRECO + " INTEGER NOT NULL, " +
             COLUNA_ACELERACAO + " INTEGER NOT NULL, " +
             COLUNA_VELOCIDADE + " INTEGER NOT NULL, " +
-            COLUNA_POSSUI + " TEXT" +
+            COLUNA_POSSUI + " TEXT, "+
+            COLUNA_NIVEL + " TEXT"+
             ")";
 
     public MotorDAO(Context context) {

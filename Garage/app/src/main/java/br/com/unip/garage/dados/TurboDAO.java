@@ -32,7 +32,8 @@ public class TurboDAO extends PecaDAO<Turbo> {
             COLUNA_VELOCIDADE + " INTEGER NOT NULL, " +
             COLUNA_ESTABILIDADE + " INTEGER NOT NULL, " +
             COLUNA_TEMPO_TURBO + " INTEGER NOT NULL," +
-            COLUNA_POSSUI + " TEXT"+
+            COLUNA_POSSUI + " TEXT, "+
+            COLUNA_NIVEL + " TEXT"+
             ")";
 
     public TurboDAO(Context context) {

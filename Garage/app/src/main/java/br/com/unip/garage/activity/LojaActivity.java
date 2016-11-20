@@ -25,7 +25,7 @@ public class LojaActivity extends Activity implements View.OnClickListener {
     }
 
     private void definirPecas(TipoPeca peca) {
-        LojaController controller = new LojaController();
+        LojaController controller = new LojaController(this);
         PecaLoja pecaAmadora = controller.getPecaAmadora(peca);
         PecaLoja pecaIntermediaria = controller.getPecaIntermediaria(peca);
         PecaLoja pecaProfissional = controller.getPecaProfissional(peca);

@@ -23,11 +23,10 @@ public class MapaActivity extends AppCompatActivity {
 
     private void setListenerMapas(){
         ListenerMapas listenerMapas = new ListenerMapas(this);
-        findViewById(R.id.mapa_mapa1).setOnClickListener(listenerMapas);
-        findViewById(R.id.mapa_mapa2).setOnClickListener(listenerMapas);
-        findViewById(R.id.mapa_mapa3).setOnClickListener(listenerMapas);
-        findViewById(R.id.mapa_mapa4).setOnClickListener(listenerMapas);
-        findViewById(R.id.mapa_mapa4).setOnClickListener(listenerMapas);
+        findViewById(R.id.mapa_mapa_um).setOnClickListener(listenerMapas);
+        findViewById(R.id.mapa_mapa_dois).setOnClickListener(listenerMapas);
+        findViewById(R.id.mapa_mapa_treis).setOnClickListener(listenerMapas);
+        findViewById(R.id.mapa_mapa_quatro).setOnClickListener(listenerMapas);
         findViewById(R.id.mapa_voltar).setOnClickListener(listenerMapas);
         findViewById(R.id.mapa_jogar).setOnClickListener(listenerMapas);
     }

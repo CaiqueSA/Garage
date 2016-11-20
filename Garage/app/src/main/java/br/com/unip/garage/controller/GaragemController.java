@@ -1,6 +1,7 @@
 package br.com.unip.garage.controller;
 
 import android.app.Activity;
+import android.view.View;
 
 import java.util.Iterator;
 import java.util.List;
@@ -47,18 +48,16 @@ public class GaragemController {
         return null;
     }
 
-    private void verificarPossuiFreios(){
+    private void verificarPossuiFreios() {
         FreioDAO freioDAO = new FreioDAO(activity);
-        for(Freio freio : freioDAO.busca()){
-            if(freio.getPossui() == Boolean.FALSE){
-                if(freio.getNivelPeca() == NivelPeca.AMADOR){
-                    activity.findViewById(R.id.garagem_freio_amador).setVisibility(GONE);
-                }
-                else if(freio.getNivelPeca() == NivelPeca.INTERMEDIARIO){
-
-                }
-                else{
-
+        for (Freio freio : freioDAO.busca()) {
+            if (freio.getPossui() == Boolean.FALSE) {
+                if (freio.getNivelPeca() == NivelPeca.AMADOR) {
+                    activity.findViewById(R.id.garagem_freio_amador).setVisibility(View.GONE);
+                } else if (freio.getNivelPeca() == NivelPeca.INTERMEDIARIO) {
+                    activity.findViewById(R.id.garagem_freio_intermediario).setVisibility(View.GONE);
+                } else {
+                    activity.findViewById(R.id.garagem_freio_profissional).setVisibility(View.GONE);
                 }
             }
         }

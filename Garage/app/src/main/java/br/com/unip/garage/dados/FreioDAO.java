@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
 
+import br.com.unip.garage.enumeration.NivelPeca;
 import br.com.unip.garage.model.Freio;
 
 /**
@@ -15,7 +16,6 @@ public class FreioDAO extends PecaDAO<Freio> {
 
     //Nome da tabela
     private static final String TABELA = "FREIO";
-
     //Colunas da tabela freio
     private static final String COLUNA_FRENAGEM = "FRENAGEM";
     private static final String COLUNA_ESTABILIDADE = "ESTABILIDADE";
@@ -29,7 +29,8 @@ public class FreioDAO extends PecaDAO<Freio> {
             COLUNA_PRECO + " integer not null, " +
             COLUNA_FRENAGEM + " integer not null, " +
             COLUNA_ESTABILIDADE + " integer not null, " +
-            COLUNA_POSSUI + " TEXT"+
+            COLUNA_POSSUI + " TEXT, "+
+            COLUNA_NIVEL + " TEXT NOT NULL"+
             ")";
 
     public FreioDAO(Context context) {
@@ -43,9 +44,9 @@ public class FreioDAO extends PecaDAO<Freio> {
     protected Freio preenche(Cursor c) {
         Integer frenagem = c.getInt(c.getColumnIndex(COLUNA_FRENAGEM));
         Integer estabilidade = c.getInt(c.getColumnIndex(COLUNA_ESTABILIDADE));
-        Freio freio = new Freio(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), frenagem, estabilidade, getNivelByCursor(c));
+        NivelPeca nivelPeca = getNivelByCursor(c);
+        Freio freio = new Freio(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), frenagem, estabilidade, nivelPeca);
         freio.setId(getIdByCursor(c));
-        freio.setNivelPeca(getNivelByCursor(c));
         return freio;
     }
 
