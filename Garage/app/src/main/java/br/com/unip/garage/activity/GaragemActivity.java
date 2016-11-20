@@ -53,17 +53,19 @@ public class GaragemActivity extends AppCompatActivity {
         findViewById(R.id.garagem_pistao_profissional).setOnClickListener(listenerPecas);
 
 
-        findViewById(R.id.garagem_frame_pneu).setOnClickListener(listenerPecas);
-        findViewById(R.id.garagem_frame_pistao).setOnClickListener(listenerPecas);
-        findViewById(R.id.garagem_frame_motor).setOnClickListener(listenerPecas);
-        findViewById(R.id.garagem_frame_turbo).setOnClickListener(listenerPecas);
-        findViewById(R.id.garagem_frame_freio).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_pneu).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_pistao).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_motor).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_turbo).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_freio).setOnClickListener(listenerPecas);
     }
 
     private void setListenerCarro() {
         ListenerCarrosGaragem listenerCarros = new ListenerCarrosGaragem(this);
         findViewById(R.id.garagem_seta_direita).setOnClickListener(listenerCarros);
         findViewById(R.id.garagem_seta_esquerda).setOnClickListener(listenerCarros);
+        findViewById(R.id.garagem_home).setOnClickListener(listenerCarros);
+        findViewById(R.id.garagem_mapas).setOnClickListener(listenerCarros);
     }
 
 

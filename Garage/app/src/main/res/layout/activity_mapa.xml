@@ -64,7 +64,7 @@
         android:layout_marginRight="55dp"
         android:layout_marginEnd="55dp"
         android:id="@+id/mapa_voltar"
-        android:background="@drawable/botao_voltar"
+        android:background="@drawable/botao_voltar_mapas"
         tools:ignore="ContentDescription" />
 
     <ImageButton

@@ -8,4 +8,12 @@ public enum NivelPeca {
 
     AMADOR, INTERMEDIARIO, PROFISSIONAL;
 
+    public static NivelPeca getNivelPecaByString(String nivelPecaString) {
+        for (NivelPeca nivelPeca : NivelPeca.values()) {
+            if (nivelPeca.toString().equals(nivelPecaString)) {
+                return nivelPeca;
+            }
+        }
+        return null;
+    }
 }

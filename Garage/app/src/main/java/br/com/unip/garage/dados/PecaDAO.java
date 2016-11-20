@@ -51,7 +51,7 @@ public abstract class PecaDAO<P extends Peca> extends TemplateDAO<P> {
     }
 
     protected NivelPeca getNivelByCursor(final Cursor c) {
-        return NivelPeca.valueOf(c.getString(c.getColumnIndex(COLUNA_NIVEL)));
+        return NivelPeca.getNivelPecaByString(c.getString(c.getColumnIndex(COLUNA_NIVEL)));
     }
 
     @Override
@@ -109,7 +109,7 @@ public abstract class PecaDAO<P extends Peca> extends TemplateDAO<P> {
         dadosPeca.put(COLUNA_NIVEL_DESBLOQUEIO, peca.getNivelDesbloqueio());
         dadosPeca.put(COLUNA_PRECO, peca.getPreco());
         dadosPeca.put(COLUNA_POSSUI, peca.getPossui());
-        dadosPeca.put(COLUNA_NIVEL_DESBLOQUEIO, peca.getNivelPeca().toString());
+        dadosPeca.put(COLUNA_NIVEL, peca.getNivelPeca().toString());
         return dadosPeca;
     }
 
