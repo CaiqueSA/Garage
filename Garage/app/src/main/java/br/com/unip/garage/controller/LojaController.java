@@ -1,6 +1,8 @@
 package br.com.unip.garage.controller;
 
+import android.app.Activity;
 import android.content.Context;
+import android.widget.Toast;
 
 import br.com.unip.garage.R;
 import br.com.unip.garage.dados.FreioDAO;
@@ -22,10 +24,12 @@ import br.com.unip.garage.model.Usuario;
 
 public class LojaController {
 
-    private Context context;
+    private UsuarioDAO dao;
+    private Activity activity;
 
-    public LojaController(Context context) {
-        this.context = context;
+    public LojaController(Activity activity) {
+        this.activity = activity;
+        this.dao = new UsuarioDAO(activity);
     }
 
     public PecaLoja getPecaAmadora(TipoPeca peca) {
@@ -74,29 +78,29 @@ public class LojaController {
     }
 
     private void comprarPeca(Peca peca, TipoPeca tipoPeca) {
-        UsuarioDAO dao = new UsuarioDAO(context);
         Usuario usuario = dao.buscaPorId("1");
-        if (usuario.getDinheiro() >= peca.getPreco()) {
-            usuario.setDinheiro(usuario.getDinheiro() - peca.getPreco());
+        if (peca.getPreco() <= usuario.getDinheiro()) {
             dao.altera(usuario);
             peca.setPossui(true);
             getPecaDAO(tipoPeca).altera(peca);
+            usuario.setDinheiro(usuario.getDinheiro() - peca.getPreco());
+            dao.altera(usuario);
         } else {
-            //TODO: Não possui dinheiro para compra
+            Toast.makeText(activity, "Você não possui dinheito para comprar esta peça!", Toast.LENGTH_LONG).show();
         }
     }
 
     private PecaDAO getPecaDAO(TipoPeca peca) {
         if (TipoPeca.FREIO == peca)
-            return new FreioDAO(context);
+            return new FreioDAO(activity);
         if (TipoPeca.MOTOR == peca)
-            return new MotorDAO(context);
+            return new MotorDAO(activity);
         if (TipoPeca.TURBO == peca)
-            return new TurboDAO(context);
+            return new TurboDAO(activity);
         if (TipoPeca.PISTAO == peca)
-            return new PistaoDAO(context);
+            return new PistaoDAO(activity);
         if (TipoPeca.PNEU == peca)
-            return new PneuDAO(context);
+            return new PneuDAO(activity);
         return null;
     }
 
