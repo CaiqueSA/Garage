@@ -84,6 +84,16 @@ public class ListenerPecasGaragem implements View.OnClickListener {
         } else if (v.getId() == R.id.garagem_turbo_profissional) {
             botaoTurbo.setBackgroundResource(R.drawable.garagem_turbo_profissional);
             alterarVisibilidade(activity.findViewById(R.id.garagem_frame_turbo));
+        } else if (v.getId() == R.id.garagem_pneu) {
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_pneu));
+        } else if (v.getId() == R.id.garagem_pistao) {
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_pistao));
+        } else if (v.getId() == R.id.garagem_motor) {
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_motor));
+        } else if (v.getId() == R.id.garagem_turbo) {
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_turbo));
+        } else if (v.getId() == R.id.garagem_freio) {
+            alterarVisibilidade(activity.findViewById(R.id.garagem_frame_freio));
         }
     }
 

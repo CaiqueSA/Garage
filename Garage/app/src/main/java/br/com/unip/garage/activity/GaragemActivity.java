@@ -14,7 +14,7 @@ import br.com.unip.garage.listener.ListenerCarrosGaragem;
 import br.com.unip.garage.listener.ListenerPecasGaragem;
 import br.com.unip.garage.model.Freio;
 
-public class GaragemActivity extends AppCompatActivity implements View.OnClickListener {
+public class GaragemActivity extends AppCompatActivity {
 
     private GaragemController garagemController = new GaragemController(this);
 
@@ -28,39 +28,6 @@ public class GaragemActivity extends AppCompatActivity implements View.OnClickLi
 
         setListenerPecas();
         setListenerCarro();
-    }
-
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.garagem_home) {
-            Intent startHome = new Intent(GaragemActivity.this, MainActivity.class);
-            startActivity(startHome);
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        }else if (v.getId() == R.id.garagem_mapas){
-            Intent startMapas = new Intent(GaragemActivity.this, MapaActivity.class);
-            startActivity(startMapas);
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        }
-        else if (v.getId() == R.id.garagem_pneu) {
-            alterarVisibilidade(findViewById(R.id.garagem_frame_pneu));
-        } else if (v.getId() == R.id.garagem_pistao) {
-            alterarVisibilidade(findViewById(R.id.garagem_frame_pistao));
-        } else if (v.getId() == R.id.garagem_motor) {
-            alterarVisibilidade(findViewById(R.id.garagem_frame_motor));
-        } else if (v.getId() == R.id.garagem_turbo) {
-            alterarVisibilidade(findViewById(R.id.garagem_frame_turbo));
-        } else if (v.getId() == R.id.garagem_freio) {
-            alterarVisibilidade(findViewById(R.id.garagem_frame_freio));
-        }
-    }
-
-
-    private void alterarVisibilidade(View view) {
-        if (view.getVisibility() == View.GONE) {
-            view.setVisibility(View.VISIBLE);
-        } else {
-            view.setVisibility(View.GONE);
-        }
     }
 
     private void setListenerPecas() {
@@ -84,6 +51,13 @@ public class GaragemActivity extends AppCompatActivity implements View.OnClickLi
         findViewById(R.id.garagem_pistao_amador).setOnClickListener(listenerPecas);
         findViewById(R.id.garagem_pistao_intermediario).setOnClickListener(listenerPecas);
         findViewById(R.id.garagem_pistao_profissional).setOnClickListener(listenerPecas);
+
+
+        findViewById(R.id.garagem_frame_pneu).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_frame_pistao).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_frame_motor).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_frame_turbo).setOnClickListener(listenerPecas);
+        findViewById(R.id.garagem_frame_freio).setOnClickListener(listenerPecas);
     }
 
     private void setListenerCarro() {
