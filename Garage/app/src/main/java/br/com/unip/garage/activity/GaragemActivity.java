@@ -1,22 +1,16 @@
 package br.com.unip.garage.activity;
 
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.view.WindowManager;
 
 import br.com.unip.garage.R;
-import br.com.unip.garage.controller.GaragemController;
-import br.com.unip.garage.dados.FreioDAO;
 import br.com.unip.garage.listener.ListenerCarrosGaragem;
 import br.com.unip.garage.listener.ListenerPecasGaragem;
-import br.com.unip.garage.model.Freio;
 
 public class GaragemActivity extends AppCompatActivity {
 
-    private GaragemController garagemController = new GaragemController(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

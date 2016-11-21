@@ -15,6 +15,7 @@ import br.com.unip.garage.dados.PistaoDAO;
 import br.com.unip.garage.dados.PneuDAO;
 import br.com.unip.garage.dados.TurboDAO;
 import br.com.unip.garage.dados.UsuarioDAO;
+import br.com.unip.garage.enumeration.NivelPeca;
 import br.com.unip.garage.enumeration.TipoPeca;
 import br.com.unip.garage.model.Peca;
 import br.com.unip.garage.model.Usuario;
@@ -65,5 +66,16 @@ public class LojaController {
         return null;
     }
 
+    public Peca getPecaAmadora(TipoPeca tipoPeca) {
+        return getPecaDAO(tipoPeca).buscaPorNivelPeca(NivelPeca.AMADOR.toString());
+    }
+
+    public Peca getPecaIntermediaria(TipoPeca tipoPeca) {
+        return getPecaDAO(tipoPeca).buscaPorNivelPeca(NivelPeca.INTERMEDIARIO.toString());
+    }
+
+    public Peca getPecaProfissional(TipoPeca tipoPeca) {
+        return getPecaDAO(tipoPeca).buscaPorNivelPeca(NivelPeca.PROFISSIONAL.toString());
+    }
 
 }
