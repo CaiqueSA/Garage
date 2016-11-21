@@ -9,8 +9,16 @@ import br.com.unip.garage.R;
 import br.com.unip.garage.activity.GaragemActivity;
 import br.com.unip.garage.activity.MainActivity;
 import br.com.unip.garage.activity.MapaActivity;
+import br.com.unip.garage.builder.BuilderCarro;
 import br.com.unip.garage.dados.CarroDAO;
+import br.com.unip.garage.dados.UsuarioDAO;
 import br.com.unip.garage.model.Carro;
+import br.com.unip.garage.model.Freio;
+import br.com.unip.garage.model.Motor;
+import br.com.unip.garage.model.Pistao;
+import br.com.unip.garage.model.Pneu;
+import br.com.unip.garage.model.Turbo;
+import br.com.unip.garage.model.Usuario;
 
 /**
  * Created by caique on 17/11/16.
@@ -48,6 +56,7 @@ public class ListenerCarrosGaragem implements View.OnClickListener {
             activity.startActivity(startHome);
             activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         } else if (v.getId() == R.id.garagem_mapas) {
+            atualizaPecasCarroUsuario();
             Intent startMapas = new Intent(activity, MapaActivity.class);
             activity.startActivity(startMapas);
             activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
@@ -55,9 +64,38 @@ public class ListenerCarrosGaragem implements View.OnClickListener {
     }
 
     private void definirImagemCarro() {
-        Carro carro = carroDAO.buscaPorId(String.valueOf(indexCarro));
+        Carro carro = carroDAO.buscaPorId(Integer.toString(indexCarro));
         if (carro != null) {
-            imagemCarro.setImageResource(Integer.valueOf(carro.getCarroImagem()));
+            Integer idImagem = activity.getResources().getIdentifier(carro.getCarroImagem(), "drawable", activity.getPackageName());
+            imagemCarro.setImageResource(idImagem);
+            imagemCarro.setTag(carro);
         }
+    }
+
+    private void atualizaPecasCarroUsuario() {
+        Carro carro = (Carro) imagemCarro.getTag();
+        Turbo turbo = (Turbo) activity.findViewById(R.id.garagem_turbo).getTag();
+        Motor motor = (Motor) activity.findViewById(R.id.garagem_motor).getTag();
+        Freio freio = (Freio) activity.findViewById(R.id.garagem_freio).getTag();
+        Pneu pneu = (Pneu) activity.findViewById(R.id.garagem_pneu).getTag();
+        Pistao pistao = (Pistao) activity.findViewById(R.id.garagem_pistao).getTag();
+
+        BuilderCarro builderCarro = new BuilderCarro();
+        builderCarro.id(carro.getId())
+                .icone(carro.getIcone())
+                .carroImagem(carro.getCarroImagem())
+                .velocidade(carro.getVelocidade())
+                .capacidadeCombustivel(carro.getCapacidadeCombustivel())
+                .turbo(turbo)
+                .motor(motor)
+                .freio(freio)
+                .pneu(pneu)
+                .pistao(pistao);
+        carroDAO.altera(builderCarro.build());
+
+        UsuarioDAO usuarioDAO = new UsuarioDAO(activity);
+        Usuario usuario = usuarioDAO.buscaPorId("1");
+        usuario.setIdCarro(carro.getId());
+        usuarioDAO.altera(usuario);
     }
 }
