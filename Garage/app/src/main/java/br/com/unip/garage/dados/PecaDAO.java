@@ -44,8 +44,8 @@ public abstract class PecaDAO<P extends Peca> extends TemplateDAO<P> {
         return c.getInt(c.getColumnIndex(COLUNA_PRECO));
     }
 
-    protected Boolean getPossuiByCursor(final Cursor c) {
-        return Boolean.valueOf(c.getString(c.getColumnIndex(COLUNA_POSSUI)));
+    protected Integer getPossuiByCursor(final Cursor c) {
+        return c.getInt(c.getColumnIndex(COLUNA_POSSUI));
     }
 
     protected NivelPeca getNivelByCursor(final Cursor c) {

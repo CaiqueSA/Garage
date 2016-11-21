@@ -85,9 +85,9 @@ public class InicializaBD {
     private void inicializaFreio(Context context) {
         FreioDAO freioDAO = new FreioDAO(context);
         if (isListNull(freioDAO)) {
-            Freio freioAmador = new Freio("freio_basic", 1, 149, -10, 5, NivelPeca.AMADOR);
-            Freio freioIntermediario = new Freio("freio_silver", 5, 279, -15, 7, NivelPeca.INTERMEDIARIO);
-            Freio freioProfissional = new Freio("freio_gold", 8, 500, -20, 8, NivelPeca.PROFISSIONAL);
+            Freio freioAmador = new Freio("freio_basic", 1, 149, -10, 5, 0, NivelPeca.AMADOR);
+            Freio freioIntermediario = new Freio("freio_silver", 5, 279, -15, 7, 0, NivelPeca.INTERMEDIARIO);
+            Freio freioProfissional = new Freio("freio_gold", 8, 500, -20, 8, 0, NivelPeca.PROFISSIONAL);
             freioDAO.insere(freioAmador);
             freioDAO.insere(freioIntermediario);
             freioDAO.insere(freioProfissional);
@@ -97,9 +97,9 @@ public class InicializaBD {
     private void inicializaMotor(Context context) {
         MotorDAO motorDAO = new MotorDAO(context);
         if (isListNull(motorDAO)) {
-            Motor motorAmador = new Motor("motor_basic", 1, 399, 13, 20, NivelPeca.AMADOR);
-            Motor motorIntermediario = new Motor("motor_silver", 6, 675, 16, 30, NivelPeca.INTERMEDIARIO);
-            Motor motorProfissional = new Motor("motor_gold", 10, 900, 20, 50, NivelPeca.PROFISSIONAL);
+            Motor motorAmador = new Motor("motor_basic", 1, 399, 13, 20, 0, NivelPeca.AMADOR);
+            Motor motorIntermediario = new Motor("motor_silver", 6, 675, 16, 30, 0, NivelPeca.INTERMEDIARIO);
+            Motor motorProfissional = new Motor("motor_gold", 10, 900, 20, 50, 0, NivelPeca.PROFISSIONAL);
             motorDAO.insere(motorAmador);
             motorDAO.insere(motorIntermediario);
             motorDAO.insere(motorProfissional);
@@ -109,9 +109,9 @@ public class InicializaBD {
     private void inicializaPistao(Context context) {
         PistaoDAO pistaoDAO = new PistaoDAO(context);
         if (isListNull(pistaoDAO)) {
-            Pistao pistaoAmador = new Pistao("pistao_basic", 1, 119, 10, NivelPeca.AMADOR);
-            Pistao pistaoIntermediario = new Pistao("pistao_silver", 4, 249, 15, NivelPeca.INTERMEDIARIO);
-            Pistao pistaoProfissional = new Pistao("pistao_gold", 8, 330, 25, NivelPeca.PROFISSIONAL);
+            Pistao pistaoAmador = new Pistao("pistao_basic", 1, 119, 10, 0, NivelPeca.AMADOR);
+            Pistao pistaoIntermediario = new Pistao("pistao_silver", 4, 249, 15, 0, NivelPeca.INTERMEDIARIO);
+            Pistao pistaoProfissional = new Pistao("pistao_gold", 8, 330, 25, 0, NivelPeca.PROFISSIONAL);
             pistaoDAO.insere(pistaoAmador);
             pistaoDAO.insere(pistaoIntermediario);
             pistaoDAO.insere(pistaoProfissional);
@@ -121,9 +121,9 @@ public class InicializaBD {
     private void inicializaPneu(Context context) {
         PneuDAO pneuDAO = new PneuDAO(context);
         if (isListNull(pneuDAO)) {
-            Pneu pneuAmador = new Pneu("pneu_basic", 1, 499, 50, 15, 10, NivelPeca.AMADOR);
-            Pneu pneuIntermediario = new Pneu("pneu_silver", 6, 799, 65, 20, 15, NivelPeca.INTERMEDIARIO);
-            Pneu pneuProfissional = new Pneu("pneu_gold", 10, 999, 85, 25, 20, NivelPeca.PROFISSIONAL);
+            Pneu pneuAmador = new Pneu("pneu_basic", 1, 499, 50, 15, 10, 0, NivelPeca.AMADOR);
+            Pneu pneuIntermediario = new Pneu("pneu_silver", 6, 799, 65, 20, 15, 0, NivelPeca.INTERMEDIARIO);
+            Pneu pneuProfissional = new Pneu("pneu_gold", 10, 999, 85, 25, 20, 0, NivelPeca.PROFISSIONAL);
             pneuDAO.insere(pneuAmador);
             pneuDAO.insere(pneuIntermediario);
             pneuDAO.insere(pneuProfissional);
@@ -133,9 +133,9 @@ public class InicializaBD {
     private void inicializaTurbina(Context context) {
         TurboDAO turboDAO = new TurboDAO(context);
         if (isListNull(turboDAO)) {
-            Turbo turboAmador = new Turbo("turbo_basic", 3, 299, 30, -20, 3, NivelPeca.AMADOR);
-            Turbo turboIntermediario = new Turbo("turbo_silver", 7, 599, 45, -22, 6, NivelPeca.INTERMEDIARIO);
-            Turbo turboProfissional = new Turbo("turbo_gold", 14, 1200, 90, -28, 8, NivelPeca.PROFISSIONAL);
+            Turbo turboAmador = new Turbo("turbo_basic", 3, 299, 30, -20, 3, 0, NivelPeca.AMADOR);
+            Turbo turboIntermediario = new Turbo("turbo_silver", 7, 599, 45, -22, 6, 0, NivelPeca.INTERMEDIARIO);
+            Turbo turboProfissional = new Turbo("turbo_gold", 14, 1200, 90, -28, 8, 0, NivelPeca.PROFISSIONAL);
             turboDAO.insere(turboAmador);
             turboDAO.insere(turboIntermediario);
             turboDAO.insere(turboProfissional);

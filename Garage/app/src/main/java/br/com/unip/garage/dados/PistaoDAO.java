@@ -27,8 +27,8 @@ public class PistaoDAO extends PecaDAO<Pistao> {
             COLUNA_NIVEL_DESBLOQUEIO + " INTEGER NOT NULL," +
             COLUNA_PRECO + " INTEGER NOT NULL, " +
             COLUNA_VELOCIDADE + " INTEGER NOT NULL, " +
-            COLUNA_POSSUI + " TEXT, "+
-            COLUNA_NIVEL + " TEXT"+
+            COLUNA_POSSUI + " INTEGER NOT NULL, " +
+            COLUNA_NIVEL + " TEXT" +
             ")";
 
     public PistaoDAO(Context context) {
@@ -40,7 +40,7 @@ public class PistaoDAO extends PecaDAO<Pistao> {
     @Override
     protected Pistao preenche(Cursor c) {
         Integer velocidade = c.getInt(c.getColumnIndex(COLUNA_VELOCIDADE));
-        Pistao pistao = new Pistao(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), velocidade, getNivelByCursor(c));
+        Pistao pistao = new Pistao(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), velocidade, getPossuiByCursor(c), getNivelByCursor(c));
         pistao.setId(getIdByCursor(c));
         pistao.setNivelPeca(getNivelByCursor(c));
         return pistao;

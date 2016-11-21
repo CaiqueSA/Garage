@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import br.com.unip.garage.R;
 import br.com.unip.garage.activity.LojaActivity;
@@ -21,10 +22,11 @@ import br.com.unip.garage.model.Peca;
  * Created by caique on 20/11/16.
  */
 
-public class ListenerLoja implements View.OnClickListener {
+public class ListenerLoja implements View.OnClickListener, View.OnLongClickListener {
 
 
     private final UsuarioDAO dao;
+    private TextView dinheiro;
     private ImageButton botaoPecaAmadora;
     private ImageButton botaoPecaIntermediaria;
     private ImageButton botaoPecaProfissional;
@@ -74,6 +76,25 @@ public class ListenerLoja implements View.OnClickListener {
             removerSelecaoBotoes();
             botaoPistao.setBackgroundResource(R.drawable.botao_pistao_select);
             definirPecas(TipoPeca.PISTAO);
+        } else if (v.getId() == botaoPecaAmadora.getId()) {
+            Peca peca = (Peca) botaoPecaAmadora.getTag();
+            definirFundoSelect(v, peca);
+        } else if (v.getId() == botaoPecaIntermediaria.getId()) {
+            Peca peca = (Peca) botaoPecaIntermediaria.getTag();
+            definirFundoSelect(v, peca);
+        } else if (v.getId() == botaoPecaProfissional.getId()) {
+            Peca peca = (Peca) botaoPecaProfissional.getTag();
+            definirFundoSelect(v, peca);
+        }
+    }
+
+    private void definirFundoSelect(View v, Peca peca) {
+        if (peca.getPossui() != null && peca.getPossui()) {
+            v.setBackgroundResource(R.drawable.campo_loja_possui_select);
+        } else {
+            if (peca.getNivelDesbloqueio() <= dao.buscaPorId("1").getNivel()) {
+                v.setBackgroundResource(R.drawable.campo_loja_select);
+            }
         }
     }
 
@@ -93,16 +114,19 @@ public class ListenerLoja implements View.OnClickListener {
 
         botaoPecaAmadora = definirImagemPeca(pecaAmadora, botaoPecaAmadora);
         botaoPecaAmadora.setVisibility(View.VISIBLE);
+        botaoPecaAmadora.setTag(pecaAmadora);
 
         botaoPecaIntermediaria = definirImagemPeca(pecaIntermediaria, botaoPecaIntermediaria);
         botaoPecaIntermediaria.setVisibility(View.VISIBLE);
+        botaoPecaIntermediaria.setTag(pecaIntermediaria);
 
         botaoPecaProfissional = definirImagemPeca(pecaProfissional, botaoPecaProfissional);
         botaoPecaProfissional.setVisibility(View.VISIBLE);
+        botaoPecaProfissional.setTag(pecaProfissional);
 
     }
 
-    private ImageButton definirImagemPeca(Peca peca, ImageButton botaoPeca) {
+    private ImageButton definirImagemPeca(final Peca peca, ImageButton botaoPeca) {
         if (peca.getNivelDesbloqueio() <= dao.buscaPorId("1").getNivel()) {
             Integer idImagem = activity.getResources().getIdentifier(peca.getImagem(), "drawable", activity.getPackageName());
             if (peca.getPossui() == Boolean.TRUE) {
@@ -112,10 +136,40 @@ public class ListenerLoja implements View.OnClickListener {
             }
             botaoPeca.setImageResource(idImagem);
         } else {
-            Integer idImagem = activity.getResources().getIdentifier(peca.getImagem()+"_bloc", "drawable", activity.getPackageName());
+            Integer idImagem = activity.getResources().getIdentifier(peca.getImagem() + "_bloc", "drawable", activity.getPackageName());
             botaoPeca.setImageResource(R.drawable.campo_loja_bloc);
             botaoPeca.setBackgroundResource(idImagem);
         }
         return botaoPeca;
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        if (v.getId() == botaoPecaAmadora.getId()) {
+            LojaController controller = new LojaController(activity);
+            Peca peca = (Peca) botaoPecaAmadora.getTag();
+            boolean comprou = controller.comprarPeca(peca, nivelPecaByName(peca.getImagem()));
+            if (comprou) {
+                definirImagemPeca(peca, botaoPecaAmadora);
+                peca.setPossui(Boolean.TRUE);
+                botaoPecaAmadora.setTag(peca);
+            }
+        }
+        return false;
+    }
+
+    private TipoPeca nivelPecaByName(String nomeImagem) {
+        if (nomeImagem.contains("freio")) {
+            return TipoPeca.FREIO;
+        } else if (nomeImagem.contains("motor")) {
+            return TipoPeca.MOTOR;
+        } else if (nomeImagem.contains("pistao")) {
+            return TipoPeca.PISTAO;
+        } else if (nomeImagem.contains("pneu")) {
+            return TipoPeca.PNEU;
+        } else if (nomeImagem.contains("turbo")) {
+            return TipoPeca.TURBO;
+        }
+        return null;
     }
 }

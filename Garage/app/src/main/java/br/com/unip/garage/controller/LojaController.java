@@ -2,7 +2,10 @@ package br.com.unip.garage.controller;
 
 import android.app.Activity;
 import android.content.Context;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import br.com.unip.garage.R;
 import br.com.unip.garage.dados.FreioDAO;
@@ -31,16 +34,20 @@ public class LojaController {
         this.dao = new UsuarioDAO(activity);
     }
 
-    public void comprarPeca(Peca peca, TipoPeca tipoPeca) {
+    public boolean comprarPeca(Peca peca, TipoPeca tipoPeca) {
         Usuario usuario = dao.buscaPorId("1");
         if (peca.getPreco() <= usuario.getDinheiro()) {
-            dao.altera(usuario);
-            peca.setPossui(true);
+            peca.setPossui(Boolean.TRUE);
             getPecaDAO(tipoPeca).altera(peca);
             usuario.setDinheiro(usuario.getDinheiro() - peca.getPreco());
             dao.altera(usuario);
+            TextView dinheiro = (TextView) activity.findViewById(R.id.loja_dinheiro);
+            dinheiro.setText(Integer.toString(usuario.getDinheiro()));
+            Toast.makeText(activity, "Peça comprada!", Toast.LENGTH_LONG).show();
+            return true;
         } else {
             Toast.makeText(activity, "Você não possui dinheito para comprar esta peça!", Toast.LENGTH_LONG).show();
+            return false;
         }
     }
 

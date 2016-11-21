@@ -9,8 +9,8 @@ public class Turbo extends Peca {
     private final Integer tempoTurbo;
 
     public Turbo(String imagem, Integer nivelDesbloqueio,
-                 Integer preco, Integer velocidade, Integer estabilidade, Integer tempoTurbo, NivelPeca nivelPeca) {
-        super(imagem, nivelDesbloqueio, preco, nivelPeca);
+                 Integer preco, Integer velocidade, Integer estabilidade, Integer tempoTurbo, Integer possui, NivelPeca nivelPeca) {
+        super(imagem, nivelDesbloqueio, preco, possui, nivelPeca);
         this.velocidade = velocidade;
         this.estabilidade = estabilidade;
         this.tempoTurbo = tempoTurbo;

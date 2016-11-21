@@ -32,7 +32,7 @@ public class TurboDAO extends PecaDAO<Turbo> {
             COLUNA_VELOCIDADE + " INTEGER NOT NULL, " +
             COLUNA_ESTABILIDADE + " INTEGER NOT NULL, " +
             COLUNA_TEMPO_TURBO + " INTEGER NOT NULL," +
-            COLUNA_POSSUI + " TEXT, "+
+            COLUNA_POSSUI + " INTEGER NOT NULL, "+
             COLUNA_NIVEL + " TEXT"+
             ")";
 
@@ -49,9 +49,8 @@ public class TurboDAO extends PecaDAO<Turbo> {
         Integer velocidade = c.getInt(c.getColumnIndex(COLUNA_VELOCIDADE));
         Integer estabilidade = c.getInt(c.getColumnIndex(COLUNA_ESTABILIDADE));
         Integer tempoTurbo = c.getInt(c.getColumnIndex(COLUNA_TEMPO_TURBO));
-        Turbo turbo = new Turbo(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), velocidade, estabilidade, tempoTurbo, getNivelByCursor(c));
+        Turbo turbo = new Turbo(getImagemByCursor(c), getNivelDesbloqueioByCursor(c), getPrecoByCursor(c), velocidade, estabilidade, tempoTurbo, getPossuiByCursor(c), getNivelByCursor(c));
         turbo.setId(getIdByCursor(c));
-        turbo.setPossui(getPossuiByCursor(c));
         return turbo;
     }
 

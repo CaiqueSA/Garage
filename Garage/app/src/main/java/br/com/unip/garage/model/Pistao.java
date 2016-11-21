@@ -6,8 +6,8 @@ public class Pistao extends Peca{
 
 	private final Integer velocidade;
 	
-	public Pistao(String imagem, Integer nivelDesbloqueio, Integer preco, Integer velocidade, NivelPeca nivelPeca) {
-		super(imagem, nivelDesbloqueio, preco, nivelPeca);
+	public Pistao(String imagem, Integer nivelDesbloqueio, Integer preco, Integer velocidade,  Integer possui, NivelPeca nivelPeca) {
+		super(imagem, nivelDesbloqueio, preco, possui, nivelPeca);
 		this.velocidade = velocidade;
 	}
 
