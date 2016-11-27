@@ -74,6 +74,10 @@ public class ListenerCarrosGaragem implements View.OnClickListener {
 
     private void atualizaPecasCarroUsuario() {
         Carro carro = (Carro) imagemCarro.getTag();
+        if (carro == null) {
+            definirImagemCarro();
+            carro = (Carro) imagemCarro.getTag();
+        }
         Turbo turbo = (Turbo) activity.findViewById(R.id.garagem_turbo).getTag();
         Motor motor = (Motor) activity.findViewById(R.id.garagem_motor).getTag();
         Freio freio = (Freio) activity.findViewById(R.id.garagem_freio).getTag();
