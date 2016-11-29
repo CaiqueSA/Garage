@@ -1,6 +1,7 @@
 package br.com.unip.garage.activity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.Image;
 import android.os.AsyncTask;
@@ -8,6 +9,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import br.com.unip.garage.R;
@@ -19,6 +21,9 @@ public class SplashScreenActivity extends AppCompatActivity implements Runnable{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
         ImageView animationImageView = (ImageView) findViewById(R.id.splashscreen_view);
         animationImageView.setBackgroundResource(R.drawable.splash_screen);

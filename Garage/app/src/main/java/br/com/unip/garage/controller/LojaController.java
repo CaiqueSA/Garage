@@ -47,7 +47,7 @@ public class LojaController {
             Toast.makeText(activity, "Peça comprada!", Toast.LENGTH_LONG).show();
             return true;
         } else {
-            Toast.makeText(activity, "Você não possui dinheito para comprar esta peça!", Toast.LENGTH_LONG).show();
+            Toast.makeText(activity, "Você não possui dinheiro para comprar esta peça!", Toast.LENGTH_LONG).show();
             return false;
         }
     }
