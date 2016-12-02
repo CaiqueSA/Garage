@@ -38,12 +38,9 @@
         android:background="@drawable/botao_pitstop" />
 
     <!-- Carros -->
-    <ImageView
-        android:id="@+id/icone_corrida_1_usuario"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="105dp"
-        android:src="@drawable/icone_azul" />
+    <FrameLayout
+        android:id="@+id/pista1_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </RelativeLayout>
